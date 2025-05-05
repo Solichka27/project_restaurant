@@ -5,10 +5,11 @@ import OrderCard1 from './../../image/homePage/fourCardMenu/orderCard1.png';
 import OrderCard2 from './../../image/homePage/fourCardMenu/orderCard2.png';
 import OrderCard3 from './../../image/homePage/fourCardMenu/orderCard3.png';
 import OrderCard4 from './../../image/homePage/fourCardMenu/orderCard4.png';
+import Button from './button/Button';
 
 const FourCardMenu = () => {
     const items = [
-        { img: OrderCard1, text: "startes", link: "/product/1" },
+        { img: OrderCard1, text: "starteкs", link: "/product/1" },
         { img: OrderCard2, text: "sandwiches", link: "/product/2" },
         { img: OrderCard3, text: "mains", link: "/product/3" },
         { img: OrderCard4, text: "desserts", link: "/product/4" },
@@ -27,7 +28,7 @@ const FourCardMenu = () => {
                     </Link>
                 ))}
             </div>
-            <button className={style.button}>text</button>
+            <Button text ="ORDER NOW"/>
         </div>
     );
 }
