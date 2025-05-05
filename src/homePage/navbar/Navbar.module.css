@@ -5,13 +5,13 @@
     padding: 20px 250px;
     background-color: white;
     box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
-    gap: 25px;
     font-size: 12px;
 }
 
 .address {
     font-weight: 500;
     color: #333;
+    cursor: pointer;
 }
 
 .links {
@@ -25,13 +25,8 @@
     font-weight: 500;
 }
 
-.link :hover {
+.links :hover {
     color: black;
-    cursor: pointer;
-}
-
-.link.active {
-    border-bottom: 2px solid black;
 }
 
 .social {
@@ -39,6 +34,7 @@
     display: flex;
     gap: 12px;
 }
-.socialLogo{
-    height: 12px;
+
+.socialLogo {
+    height: 14px;
 }

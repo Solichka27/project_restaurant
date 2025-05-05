@@ -19,6 +19,7 @@ const Navbar = (props) => {
                     <NavLink to="/contact" className={style.link}>CONTACT</NavLink>
                     <NavLink to="/press" className={style.link}>PRESS</NavLink>
                 </div>
+
                 <div className={style.social}>
                     <a href="https://facebook.com" target="_blank" rel="noopener noreferrer" className={style.socialItem}>
                         <img src={logoFacebook} alt="logoFecebook" className={style.socialLogo} />
@@ -32,6 +33,7 @@ const Navbar = (props) => {
                         <img src={logoInstagram} alt="logoInstagram" className={style.socialLogo} />
                     </a>
                 </div>
+
             </nav>
         </div >
     )
