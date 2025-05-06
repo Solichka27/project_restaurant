@@ -28,7 +28,7 @@ const FourCardMenu = () => {
                     </Link>
                 ))}
             </div>
-            <Button text ="ORDER NOW"/>
+            <Button text ="ORDER NOW" link="https://www.tripadvisor.com/Restaurant_Review-g60763-d476855-Reviews-Red_Bamboo-New_York_City_New_York.html"/>
         </div>
     );
 }
