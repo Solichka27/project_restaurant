@@ -1,6 +1,5 @@
 import React from 'react';
 import style from './HomePage.module.css';
-import { BrowserRouter } from 'react-router-dom';
 import Header from '../header/Header';
 import FourCardMenu from '../fourCardMenu/FourCardMenu';
 

@@ -1,17 +1,17 @@
 import React from 'react';
 import style from './Button.module.css';
 
-const Button = (props)=> {
+const Button = ({ link, text, isBlank = true }) => {
 
   const handleClick = () => {
-    window.open(props.link, "_blank", "noopener,noreferrer");
+    window.open(link, isBlank ? "_blank" : "self", "noopener,noreferrer");
   };
 
-    return (
-      <button className={style.button} onClick={handleClick}>
-        {props.text}
-      </button>
-    );
+  return (
+    <button className={style.button} onClick={handleClick}>
+      {text}
+    </button>
+  );
 };
 
 export default Button;

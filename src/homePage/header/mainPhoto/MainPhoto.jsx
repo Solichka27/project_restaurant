@@ -6,8 +6,8 @@ import style from './MainPhoto.module.css';
 const MainPhoto = (props) => {
     return (
         <div className={style.mainContainer}>
-            <img src={mainPhoto} alt="mainPhoto" className={style.mainPhoto}/>
-            <img src={logo} alt="mainPhoto" className={style.logo}/>
+            <img src={mainPhoto} alt="mainPhoto" className={style.mainPhoto} />
+            <img src={logo} alt="mainPhoto" className={style.logo} />
         </div >
     )
 }

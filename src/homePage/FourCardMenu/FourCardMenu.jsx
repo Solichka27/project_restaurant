@@ -1,23 +1,15 @@
 import React from 'react';
 import style from './FourCardMenu.module.css';
-import { Link, BrowserRouter } from "react-router-dom";
-import OrderCard1 from './../../image/homePage/fourCardMenu/orderCard1.png';
-import OrderCard2 from './../../image/homePage/fourCardMenu/orderCard2.png';
-import OrderCard3 from './../../image/homePage/fourCardMenu/orderCard3.png';
-import OrderCard4 from './../../image/homePage/fourCardMenu/orderCard4.png';
+import { Link } from "react-router-dom";
 import Button from './button/Button';
+import FourCardMenuConst from './FourCardMenuConst';
 
 const FourCardMenu = () => {
-    const items = [
-        { img: OrderCard1, text: "starteкs", link: "/product/1" },
-        { img: OrderCard2, text: "sandwiches", link: "/product/2" },
-        { img: OrderCard3, text: "mains", link: "/product/3" },
-        { img: OrderCard4, text: "desserts", link: "/product/4" },
-    ];
+
     return (
         <div className={style.wrapper}>
             <div className={style.orderCart}>
-                {items.map((item, index) => (
+                {FourCardMenuConst.map((item, index) => (
                     <Link to={item.link} key={index} className={style.item}>
                         <div className={style.imageWrapper}>
                             <img src={item.img} alt={`OrderCart${index + 1}`} />
@@ -28,7 +20,7 @@ const FourCardMenu = () => {
                     </Link>
                 ))}
             </div>
-            <Button text ="ORDER NOW" link="https://www.tripadvisor.com/Restaurant_Review-g60763-d476855-Reviews-Red_Bamboo-New_York_City_New_York.html"/>
+            <Button text="ORDER NOW" link="https://www.tripadvisor.com/Restaurant_Review-g60763-d476855-Reviews-Red_Bamboo-New_York_City_New_York.html" />
         </div>
     );
 }
