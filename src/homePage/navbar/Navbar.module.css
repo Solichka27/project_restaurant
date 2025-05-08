@@ -1,0 +1,40 @@
+.navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px 250px;
+    background-color: white;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    font-size: 12px;
+}
+
+.address {
+    font-weight: 500;
+    color: #333;
+    cursor: pointer;
+}
+
+.links {
+    display: flex;
+    gap: 50px;
+}
+
+.link {
+    text-decoration: none;
+    color: gray;
+    font-weight: 500;
+}
+
+.links :hover {
+    color: black;
+}
+
+.social {
+    text-decoration: none;
+    display: flex;
+    gap: 12px;
+}
+
+.socialLogo {
+    height: 14px;
+}
