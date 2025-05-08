@@ -21,15 +21,15 @@ const Navbar = (props) => {
                 </div>
 
                 <div className={style.social}>
-                    <a href="https://facebook.com" target="_blank" rel="noopener noreferrer" className={style.socialItem}>
+                    <a href="https://www.facebook.com/Redbamboonyc/" target="_blank" rel="noopener noreferrer" className={style.socialItem}>
                         <img src={logoFacebook} alt="logoFecebook" className={style.socialLogo} />
                     </a>
 
-                    <a href="https://instagram.com" target="_blank" rel="noopener noreferrer" className={style.socialItem}>
+                    <a href="https://x.com/i/flow/login?redirect_after_login=%2Fredbamboonyc" target="_blank" rel="noopener noreferrer" className={style.socialItem}>
                         <img src={logoTwitter} alt="logoTwitter" className={style.socialLogo} />
                     </a>
 
-                    <a href="https://twitter.com" target="_blank" rel="noopener noreferrer" className={style.socialItem}>
+                    <a href="https://www.instagram.com/redbamboonyc/" target="_blank" rel="noopener noreferrer" className={style.socialItem}>
                         <img src={logoInstagram} alt="logoInstagram" className={style.socialLogo} />
                     </a>
                 </div>
