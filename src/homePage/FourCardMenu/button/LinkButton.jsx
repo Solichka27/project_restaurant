@@ -1,7 +1,7 @@
 import React from 'react';
-import style from './Button.module.css';
+import style from './LinkButton.module.css';
 
-const Button = ({ link, text, isBlank = true }) => {
+const LinkButton = ({ link, text, isBlank = true }) => {
 
   const handleClick = () => {
     window.open(link, isBlank ? "_blank" : "self", "noopener,noreferrer");
@@ -14,4 +14,4 @@ const Button = ({ link, text, isBlank = true }) => {
   );
 };
 
-export default Button;
+export default LinkButton;

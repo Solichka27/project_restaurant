@@ -1,7 +1,7 @@
 import React from 'react';
 import style from './FourCardMenu.module.css';
 import { Link } from "react-router-dom";
-import Button from './button/Button';
+import LinkButton from './button/LinkButton';
 import FourCardMenuConst from './FourCardMenuConst';
 
 const FourCardMenu = () => {
@@ -20,7 +20,7 @@ const FourCardMenu = () => {
                     </Link>
                 ))}
             </div>
-            <Button text="ORDER NOW" link="https://www.tripadvisor.com/Restaurant_Review-g60763-d476855-Reviews-Red_Bamboo-New_York_City_New_York.html" />
+            <LinkButton text="ORDER NOW" link="https://www.tripadvisor.com/Restaurant_Review-g60763-d476855-Reviews-Red_Bamboo-New_York_City_New_York.html" />
         </div>
     );
 }
