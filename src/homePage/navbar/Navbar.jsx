@@ -9,6 +9,7 @@ const Navbar = (props) => {
     return (
         <div className={style.mainContainer}>
             <nav className={style.navbar}>
+                
                 <div className={style.address}>140 WEST 4TH ST</div>
                 <div className={style.links}>
                     <NavLink to="/" className={style.link}>HOME</NavLink>
