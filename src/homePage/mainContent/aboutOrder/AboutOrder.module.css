@@ -1,0 +1,78 @@
+.mainContent {
+    position: relative;
+    width: 100%;
+    font-size: 14px;
+}
+
+.backgroundImage {
+    position: relative;
+    z-index: 0;
+}
+
+.foodPhoto {
+    width: 100%;
+    display: block;
+    z-index: 0;
+}
+
+.block {
+    position: absolute;
+    top: 0%;
+    right: 0;
+    z-index: 2;
+    background-color: #ffffff;
+    padding: 20px;
+    width: 47%;
+    text-align: center;
+}
+
+.groupIcon {
+    display: flex;
+    gap: 40px;
+    justify-content: center
+}
+
+.block2 {
+    position: absolute;
+    top: 48%;
+    left: 0;
+    z-index: 3;
+    background-color: #ffffff;
+    padding: 20px;
+    width: 49%;
+    text-align: center;
+    padding-bottom: 60px;
+}
+
+.hoursWork {
+    line-height: 0.7;
+}
+
+.subtitle {
+    color: #920003;
+    font-weight: 400;
+}
+
+.subtitle2 {
+    margin-top: 40px;
+    color: #5e0e26;
+}
+
+.socialLogo {
+    height: 40px;
+    width: 40px;
+}
+
+.phone {
+    margin-bottom: 30px;
+}
+
+.linkDelivery {
+    display: flex;
+    gap: 8px;
+    justify-content: center;
+}
+
+.linkItem {
+    color: black;
+}
