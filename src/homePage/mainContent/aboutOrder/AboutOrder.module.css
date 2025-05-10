@@ -34,18 +34,14 @@
 
 .block2 {
     position: absolute;
-    top: 48%;
+    top: 40%;
     left: 0;
     z-index: 3;
     background-color: #ffffff;
     padding: 20px;
     width: 49%;
     text-align: center;
-    padding-bottom: 60px;
-}
-
-.hoursWork {
-    line-height: 0.7;
+    padding-bottom: 29px;
 }
 
 .subtitle {
@@ -54,7 +50,7 @@
 }
 
 .subtitle2 {
-    margin-top: 40px;
+    margin-top: 30px;
     color: #5e0e26;
 }
 
@@ -63,11 +59,20 @@
     width: 40px;
 }
 
-.phone {
-    margin-bottom: 30px;
+.phone,
+.takeOut {
+    margin-bottom: 20px;
+}
+
+.hoursWork,
+.phoneNum,
+.sectionTakeOut,
+.deliveryText {
+    line-height: 0.7;
 }
 
 .linkDelivery {
+    padding: 10px;
     display: flex;
     gap: 8px;
     justify-content: center;
