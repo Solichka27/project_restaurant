@@ -24,6 +24,7 @@
     padding: 20px;
     width: 47%;
     text-align: center;
+    padding-bottom: 30px;
 }
 
 .groupIcon {
@@ -34,14 +35,14 @@
 
 .block2 {
     position: absolute;
-    top: 40%;
+    top: 41%;
     left: 0;
     z-index: 3;
     background-color: #ffffff;
     padding: 20px;
     width: 49%;
     text-align: center;
-    padding-bottom: 29px;
+    padding-bottom: 30px;
 }
 
 .subtitle {
@@ -61,7 +62,7 @@
 
 .phone,
 .takeOut {
-    margin-bottom: 20px;
+    margin-bottom: 25px;
 }
 
 .hoursWork,
@@ -71,11 +72,16 @@
     line-height: 0.7;
 }
 
+
 .linkDelivery {
-    padding: 10px;
+    padding-top: 20px;
     display: flex;
     gap: 8px;
     justify-content: center;
+}
+
+.delivery {
+    margin-bottom: 20px;
 }
 
 .linkItem {

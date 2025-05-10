@@ -73,7 +73,7 @@ const AboutOrder = () => {
                         <p className={style.takeOutText}>To place an order for pickup,</p>
                         <p className={style.takeOutText}>please order via Square.</p>
                     </div>
-                    <LinkButton text="ORDER PICKUP" link="#about" />
+                    <LinkButton text="ORDER PICKUP" link="#menu" />
                 </div>
 
                 <div className={style.sectionDelivery}>
