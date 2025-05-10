@@ -1,4 +1,3 @@
-import React from 'react';
 import OrderCard1 from './../../image/homePage/fourCardMenu/orderCard1.png';
 import OrderCard2 from './../../image/homePage/fourCardMenu/orderCard2.png';
 import OrderCard3 from './../../image/homePage/fourCardMenu/orderCard3.png';
