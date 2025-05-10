@@ -1,7 +1,7 @@
 import React from 'react';
 import style from './HomePage.module.css';
 import Header from '../header/Header';
-import FourCardMenu from '../fourCardMenu/FourCardMenu';
+import FourCardMenu from '../fourCardMenu/fourCardMenu';
 
 function HomePage() {
     return (
