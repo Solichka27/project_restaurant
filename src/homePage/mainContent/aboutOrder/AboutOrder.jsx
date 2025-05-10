@@ -78,7 +78,7 @@ const AboutOrder = () => {
 
                 <div className={style.sectionDelivery}>
                     <div className={style.delivery}>
-                        <h4 className={style.subtitle2}>DELIVERY EXPANDED</h4>
+                        <h4 className={style.subtitleDelivery}>DELIVERY EXPANDED</h4>
                         <p className={style.deliveryText}>To place an order for delivery, please choose from</p>
                         <p className={style.deliveryText}>one of our partners below:</p>
                     </div>
