@@ -15,7 +15,7 @@
     z-index: 0;
 }
 
-.block {
+.about {
     position: absolute;
     top: 0%;
     right: 0;
@@ -27,13 +27,7 @@
     padding-bottom: 30px;
 }
 
-.groupIcon {
-    display: flex;
-    gap: 40px;
-    justify-content: center
-}
-
-.block2 {
+.order {
     position: absolute;
     top: 40%;
     left: 0;
@@ -43,47 +37,4 @@
     width: 49%;
     text-align: center;
     padding-bottom: 30px;
-}
-
-.subtitle {
-    color: #920003;
-    font-weight: 400;
-}
-
-.subtitle2 {
-    margin-top: 30px;
-    color: #5e0e26;
-}
-
-.socialLogo {
-    height: 40px;
-    width: 40px;
-}
-
-.phone,
-.takeOut {
-    margin-bottom: 25px;
-}
-
-.hoursWork,
-.phoneNum,
-.sectionTakeOut,
-.deliveryText {
-    line-height: 0.7;
-}
-
-
-.linkDelivery {
-    padding-top: 20px;
-    display: flex;
-    gap: 8px;
-    justify-content: center;
-}
-
-.delivery {
-    margin-bottom: 20px;
-}
-
-.linkItem {
-    color: black;
 }

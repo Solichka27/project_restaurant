@@ -1,0 +1,39 @@
+.mainContent {
+    position: relative;
+    width: 100%;
+    font-size: 14px;
+}
+
+.subtitle {
+    color: #920003;
+    font-weight: 400;
+}
+
+.subtitle2 {
+    margin-top: 30px;
+    color: #5e0e26;
+}
+
+.takeOut {
+    margin-bottom: 25px;
+}
+
+.sectionTakeOut,
+.deliveryText {
+    line-height: 0.7;
+}
+
+.linkDelivery {
+    padding-top: 20px;
+    display: flex;
+    gap: 8px;
+    justify-content: center;
+}
+
+.delivery {
+    margin-bottom: 20px;
+}
+
+.linkItem {
+    color: black;
+}
