@@ -1,0 +1,35 @@
+.mainContent {
+    position: relative;
+    width: 100%;
+    font-size: 14px;
+}
+
+.groupIcon {
+    display: flex;
+    gap: 40px;
+    justify-content: center
+}
+
+.subtitle {
+    color: #920003;
+    font-weight: 400;
+}
+
+.subtitle2 {
+    margin-top: 30px;
+    color: #5e0e26;
+}
+
+.socialLogo {
+    height: 40px;
+    width: 40px;
+}
+
+.phone {
+    margin-bottom: 25px;
+}
+
+.hoursWork,
+.phoneNum {
+    line-height: 0.7;
+}
