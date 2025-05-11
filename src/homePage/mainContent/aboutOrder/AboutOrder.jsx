@@ -56,7 +56,7 @@ const AboutOrder = () => {
                         <p className={style.phoneNum}>212.260.1212</p>
                         <p className={style.phoneNum}>212.260.7049</p>
                     </div>
-                    <LinkButton text="ABOUT US" link="#about" />
+                    <LinkButton text="ABOUT US" link="#about" isBlank={false} />
                 </div>
             </div>
 
@@ -73,7 +73,7 @@ const AboutOrder = () => {
                         <p className={style.takeOutText}>To place an order for pickup,</p>
                         <p className={style.takeOutText}>please order via Square.</p>
                     </div>
-                    <LinkButton text="ORDER PICKUP" link="#menu" />
+                    <LinkButton text="ORDER PICKUP" link="#menu" isBlank={false} />
                 </div>
 
                 <div className={style.sectionDelivery}>

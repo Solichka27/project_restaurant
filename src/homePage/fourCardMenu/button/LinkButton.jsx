@@ -4,7 +4,11 @@ import style from './LinkButton.module.css';
 const LinkButton = ({ link, text, isBlank = true }) => {
 
   const handleClick = () => {
-    window.open(link, isBlank ? "_blank" : "self", "noopener,noreferrer");
+    if (isBlank) {
+      window.open(link, "_blank", "noopener,noreferrer");
+    } else {
+      window.location.href = link;
+    }
   };
 
   return (
