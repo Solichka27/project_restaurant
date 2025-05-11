@@ -30,12 +30,12 @@ const Order = () => {
 
                 <div className={style.linkDelivery}>
                     <a href="https://postmates.com/store/red-bamboo/AENNGqX0QuyQWIYlZ-oxIg?diningMode=DELIVERY&pl=JTdCJTIyYWRkcmVzcyUyMiUzQSUyMjIxMSUyMEF2ZW51ZSUyMEElMjIlMkMlMjJyZWZlcmVuY2UlMjIlM0ElMjIxMzFkNWMxMy04NmIzLTQ4N2QtMjZiMy03OTQ3YzhiNjEyOGElMjIlMkMlMjJyZWZlcmVuY2VUeXBlJTIyJTNBJTIydWJlcl9wbGFjZXMlMjIlMkMlMjJsYXRpdHVkZSUyMiUzQTQwLjczJTJDJTIybG9uZ2l0dWRlJTIyJTNBLTczLjk4MDY5NjclN0Q%3D&ps=1"
-                        target='_blank' className={style.linkItem}>
+                        target='_blank' rel="noopener noreferrer" className={style.linkItem}>
                         Postmates</a>
-                    <a href="https://www.grubhub.com/restaurant/red-bamboo-140-west-4th-street-new-york/2185145" target='_blank' className={style.linkItem}>PGrubHub</a>
-                    <a href="https://www.seamless.com/menu/red-bamboo-140-west-4th-street-new-york/2185145" target='_blank' className={style.linkItem}>Postmates</a>
+                    <a href="https://www.grubhub.com/restaurant/red-bamboo-140-west-4th-street-new-york/2185145" target='_blank' rel="noopener noreferrer" className={style.linkItem}>PGrubHub</a>
+                    <a href="https://www.seamless.com/menu/red-bamboo-140-west-4th-street-new-york/2185145" target='_blank'  rel="noopener noreferrer" className={style.linkItem}>Postmates</a>
                     &
-                    <a href="https://www.ubereats.com/store/red-bamboo/AENNGqX0QuyQWIYlZ-oxIg" target='_blank' className={style.linkItem}>UberEats</a>
+                    <a href="https://www.ubereats.com/store/red-bamboo/AENNGqX0QuyQWIYlZ-oxIg" target='_blank'  rel="noopener noreferrer" className={style.linkItem}>UberEats</a>
                 </div>
 
             </div>
