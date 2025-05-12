@@ -4,15 +4,13 @@
 }
 
 .backgroundPhoto {
-    background-color: white;
     mix-blend-mode: lighten;
     opacity: 0.5;
     width: 100%;
-    z-index: 0;
     display: block;
 }
 
-.overlayContent {
+.block {
     position: absolute;
     top: 45%;
     left: 50%;

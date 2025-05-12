@@ -10,7 +10,7 @@ const ConnectWithUs = () => {
                 <img src={backgroundPhoto} alt="backgroundPhoto" className={style.backgroundPhoto} />
             </div>
 
-            <div className={style.overlayContent}>
+            <div className={style.block}>
                 <h2 className={style.text}>connect with us</h2>
                 <div className={style.icons}>
                     <IconSocial />
