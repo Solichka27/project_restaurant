@@ -11,7 +11,7 @@ const FeedbackItem = ({ icon, iconHover, url, title, text }) => {
 
             <div className={style.circle}>
                 <div className={style.icon}>
-                    <a href={url} target="_blank">
+                    <a href={url} target="_blank" rel="noopener noreferrer">
                         <img src={isHovered ? iconHover : icon}
                             alt="iconFeedback" className={style.iconItem}
                             onMouseEnter={() => setIsHovered(true)}
