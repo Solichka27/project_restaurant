@@ -4,10 +4,10 @@ import Feedback from './feedback/Feedback';
 
 const MainContent = () => {
     return (
+
         <div className={style.mainContent}>
-           <AboutOrder  />
-           <Feedback />
-           
+            <AboutOrder />
+            <Feedback />
         </div>
 
     )

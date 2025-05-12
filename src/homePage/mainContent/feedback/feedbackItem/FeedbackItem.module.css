@@ -20,7 +20,7 @@
 
 .iconItem {
     height: 60px;
-    margin-top: 20px;
+    margin-top: 25px;
 }
 
 .title {
@@ -37,7 +37,10 @@
 }
 
 .quote {
-    margin-top: 30px;
-    font-size: 40px;
-    color: black;
+    margin-top: 60px;
+}
+
+.quotationMark {
+    height: 30px;
+    width: 40px;
 }

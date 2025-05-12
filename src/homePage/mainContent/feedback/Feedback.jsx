@@ -12,6 +12,7 @@ import CowHover from '../../../image/homePage/mainContent/feedback/cowHover.png'
 const Feedback = () => {
     return (
         <div className={style.mainContent}>
+
             <div className={style.feedbackItem}>
                 <FeedbackItem
                     icon={Yelp}

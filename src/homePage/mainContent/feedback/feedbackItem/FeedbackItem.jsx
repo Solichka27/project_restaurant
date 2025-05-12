@@ -28,11 +28,11 @@ const FeedbackItem = ({ icon, iconHover, url, title, text }) => {
             <div className={style.text}>
                 {text}
                 <div className={style.quote}>
-                    <img src={QuotationMarks} alt="quotationMarks" />
+                    <img src={QuotationMarks} alt="quotationMarks" className={style.quotationMark} />
                 </div>
             </div>
         </div>
     )
 }
 
-export default FeedbackItem
+export default FeedbackItem;
