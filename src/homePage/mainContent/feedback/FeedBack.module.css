@@ -1,0 +1,9 @@
+.mainContent {
+    display: flex;
+    margin-top: 90px;
+    gap: 20px;
+}
+
+.feedbackItem {
+    flex: 0 0 auto;
+}
