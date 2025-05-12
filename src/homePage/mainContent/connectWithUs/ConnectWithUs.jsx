@@ -18,7 +18,6 @@ const ConnectWithUs = () => {
             </div>
 
         </div>
-
     )
 }
 

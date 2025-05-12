@@ -18,8 +18,6 @@ const IconSocial = () => {
                 <img src={iconInstagram} alt="iconInstagram" className={style.iconItem} />
             </a>
         </div>
-
-
     )
 }
 export default IconSocial;
