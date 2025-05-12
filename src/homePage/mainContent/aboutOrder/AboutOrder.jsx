@@ -19,7 +19,6 @@ const AboutOrder = () => {
                 <Order />
             </div>
         </div>
-        
     )
 }
 
