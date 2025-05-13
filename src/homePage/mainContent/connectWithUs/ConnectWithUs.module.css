@@ -1,0 +1,29 @@
+.mainContent {
+    position: relative;
+    height: auto;
+}
+
+.backgroundPhoto {
+    mix-blend-mode: lighten;
+    opacity: 0.5;
+    width: 100%;
+    display: block;
+}
+
+.block {
+    position: absolute;
+    top: 45%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    text-align: center;
+}
+
+.text {
+    font-size: 32px;
+    margin-bottom: 30px;
+    text-shadow: 0 2px 4px rgba(0, 0, 0, 0.6);
+}
+
+.icons {
+    margin-left: 55px;
+}

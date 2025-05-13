@@ -1,0 +1,9 @@
+.iconGroup {
+    display: flex;
+    gap: 30px;
+}
+
+.iconItem {
+    height: 25px;
+    width: 25px;
+}
