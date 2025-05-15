@@ -6,6 +6,7 @@ const ReviewItemPost = ({ item, onClose, onPrev, onNext }) => {
 
     return (
         <div className={style.modalOverlay} onClick={onClose}>
+            
             <div className={style.modalContent} onClick={(e) => e.stopPropagation()}>
                 <button className={style.closeButton} onClick={onClose}>×</button>
 
@@ -14,13 +15,16 @@ const ReviewItemPost = ({ item, onClose, onPrev, onNext }) => {
                 </div>
 
                 <div className={style.block2}>
+
                     <div className={style.blockInstagram}>
                         <a href={item.url} target="_blank" rel="noopener noreferrer" className={style.icon}>
                             <img src={LogoInstagram} alt="LogoInstagram" />
                         </a>
                         <h4 className={style.nameRestaurant}>redbamboonyc</h4>
                     </div>
+
                     <div className={style.separator}></div>
+
                     <div className={style.navButtons}>
                         <button className={style.arrowButton} onClick={onPrev}>‹</button>
                         <button className={style.arrowButton} onClick={onNext}>›</button>
@@ -30,7 +34,9 @@ const ReviewItemPost = ({ item, onClose, onPrev, onNext }) => {
                         <p className={style.modalText}>{item.text}</p>
                         <p className={style.hashtags}>{item.hashtags}</p>
                     </div>
+
                     <div className={style.separator}></div>
+
                     <p className={style.data}>{item.data}</p>
                 </div>
             </div>

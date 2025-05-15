@@ -6,7 +6,7 @@ import ReviewItemPost from './reviewItemPost/ReviewItemPost';
 const ItemPost = () => {
     const scrollRef = useRef(null);
     const [showLeftArrow, setShowLeftArrow] = useState(false);
-    const [selectedItem, setSelectedItem] = useState(null);
+    const [selectedIndex, setSelectedIndex] = useState(null);
 
     const scroll = (direction) => {
         if (!scrollRef.current) return;
@@ -23,6 +23,18 @@ const ItemPost = () => {
         setShowLeftArrow(scrollLeft > 5);
     };
 
+    const handlePrev = () => {
+        if (selectedIndex > 0) {
+            setSelectedIndex((prev) => prev - 1);
+        }
+    };
+
+    const handleNext = () => {
+        if (selectedIndex < ItemPostConst.length - 1) {
+            setSelectedIndex((prev) => prev + 1);
+        }
+    };
+
     useEffect(() => {
         const ref = scrollRef.current;
         if (ref) {
@@ -30,6 +42,7 @@ const ItemPost = () => {
             return () => ref.removeEventListener('scroll', handleScroll);
         }
     }, []);
+
 
     return (
         <div className={style.mainContent}>
@@ -40,11 +53,8 @@ const ItemPost = () => {
             <div className={style.scrollContainer} ref={scrollRef}>
                 <div className={style.wrapper}>
                     {ItemPostConst.map((item, index) => (
-                        <div
-                            className={style.imageWrapper}
-                            key={index}
-                            onClick={() => setSelectedItem(item)}
-                        >
+                        <div className={style.imageWrapper} key={index}
+                            onClick={() => setSelectedIndex(index)}>
                             <img src={item.img} alt={`InstagramPost${index + 1}`} />
                             <div className={style.overlay}>
                                 <span>{item.text}</span>
@@ -56,7 +66,12 @@ const ItemPost = () => {
 
             <button className={style.navRight} onClick={() => scroll('right')}>›</button>
 
-            <ReviewItemPost item={selectedItem} onClose={() => setSelectedItem(null)} />
+            <ReviewItemPost
+                item={ItemPostConst[selectedIndex]}
+                onClose={() => setSelectedIndex(null)}
+                onPrev={handlePrev}
+                onNext={handleNext}
+            />
         </div>
     );
 };

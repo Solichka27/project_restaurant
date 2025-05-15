@@ -42,7 +42,7 @@
 
 .image {
     width: 100%;
-    height: auto;
+    height: 600px;
     object-fit: contain;
 }
 
@@ -92,7 +92,6 @@
     background-color: #ccc;
     margin: 20px 0;
 }
-
 
 .text {
     flex: 1;
