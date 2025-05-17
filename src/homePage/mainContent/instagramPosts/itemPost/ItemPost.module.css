@@ -1,39 +1,23 @@
-.mainContent {
-    position: relative;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    width: 1100px;
+.sliderWrapper {
+    max-width: 1000px;
     margin: 0 auto;
-}
-
-.scrollContainer {
-    overflow-x: auto;
-    overflow-y: hidden;
-    width: 1100px;
-    scrollbar-width: none;
-    -ms-overflow-style: none;
-}
-
-.scrollContainer::-webkit-scrollbar {
-    display: none;
-}
-
-.wrapper {
-    display: flex;
-    gap: 25px;
-    padding-bottom: 10px;
-}
-
-.imageWrapper {
+    padding: 0;
     position: relative;
-    width: 325px;
-    height: 350px;
-    flex-shrink: 0;
+}
+
+.slideItem {
+    padding-right: 30px;
+    box-sizing: border-box;
+}
+
+.imageContainer {
+    position: relative;
+    width: 300px;
+    height: 300px;
     overflow: hidden;
 }
 
-.imageWrapper img {
+.imageContainer img {
     width: 100%;
     height: 100%;
     object-fit: cover;
@@ -46,46 +30,52 @@
     left: 0;
     width: 100%;
     height: 100%;
-    backdrop-filter: blur(3px);
-    background: rgba(0, 0, 0, 0.4);
-    color: white;
-    font-size: 18px;
+    background: rgba(0, 0, 0, 0.45);
+    color: #fff;
+    font-size: 16px;
     display: flex;
     align-items: center;
     justify-content: center;
     opacity: 0;
     transition: opacity 0.3s ease;
+    text-align: center;
 }
 
-.imageWrapper:hover img {
+.imageContainer:hover .overlay {
+    opacity: 1;
+}
+
+.imageContainer:hover img {
     filter: blur(2px);
 }
 
-.imageWrapper:hover .overlay {
-    opacity: 1;
-    cursor: pointer;
-    text-align: center;
-    font-size: 14px;
-}
-
-.navLeft,
-.navRight {
-    background: none;
-    border: none;
-    font-size: 36px;
+.arrow {
+    width: 56px;
+    height: 56px;
+    background-color: rgb(222, 222, 222);
+    color: black;
+    font-size: 35px;
+    border-radius: 50%;
+    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.15);
+    display: flex;
+    align-items: center;
+    justify-content: center;
     cursor: pointer;
     z-index: 2;
-    color: #333;
-    padding: 10px;
     position: absolute;
     top: 50%;
     transform: translateY(-50%);
+    user-select: none;
+    text-align: center;
+    line-height: normal;
+    padding: 0;
+    font-family: Arial, sans-serif;
 }
 
-.navLeft {
-    left: -40px;
+.left {
+    left: 10px;
 }
 
-.navRight {
-    right: -40px;
+.right {
+    right: 20px;
 }
