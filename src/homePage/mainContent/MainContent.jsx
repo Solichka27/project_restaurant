@@ -2,6 +2,7 @@ import style from './MainContent.module.css';
 import AboutOrder from './aboutOrder/AboutOrder';
 import Feedback from './feedback/Feedback';
 import ConnectWithUs from './connectWithUs/ConnectWithUs';
+import InstagramPosts from './instagramPosts/InstagramPosts';
 
 const MainContent = () => {
     return (
@@ -10,6 +11,7 @@ const MainContent = () => {
             <AboutOrder />
             <Feedback />
             <ConnectWithUs />
+            <InstagramPosts />
         </div>
 
     )
