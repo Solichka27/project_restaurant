@@ -9,15 +9,17 @@ const AboutOrder = () => {
 
             <div className={style.backgroundImage}>
                 <img src={foodPhoto} alt="foodPhoto" className={style.foodPhoto} />
+                <div className={style.about}>
+                    <About />
+                </div>
+                <div className={style.order}>
+                    <Order />
+                </div>
             </div>
 
-            <div className={style.about}>
-                <About />
-            </div>
 
-            <div className={style.order}>
-                <Order />
-            </div>
+
+
         </div>
     )
 }
