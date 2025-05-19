@@ -1,7 +1,9 @@
 import { useState } from 'react';
 import Slider from "react-slick";
+import Modal from 'react-modal';
 import style from './ItemPost.module.css';
 import ItemPostConst from './ItemPostConst';
+import ReviewItemPost from './reviewItemPost/ReviewItemPost';
 
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
@@ -23,6 +25,7 @@ const CustomNextArrow = ({ onClick }) => (
 
 const ItemPost = () => {
     const [currentSlide, setCurrentSlide] = useState(0);
+    const [selectedItem, setSelectedItem] = useState(null);
 
     const settings = {
         dots: false,
@@ -42,7 +45,7 @@ const ItemPost = () => {
         <div className={style.sliderWrapper}>
             <Slider {...settings}>
                 {ItemPostConst.map((item, index) => (
-                    <div key={index} className={style.slideItem}>
+                    <div key={index} className={style.slideItem} onClick={() => setSelectedItem(item)}>
                         <div className={style.imageContainer}>
                             <img src={item.img} alt={`item-${index}`} />
                             <div className={style.overlay}>{item.text}</div>
@@ -50,7 +53,23 @@ const ItemPost = () => {
                     </div>
                 ))}
             </Slider>
+
+
+            <Modal
+                isOpen={!!selectedItem}
+                onRequestClose={() => setSelectedItem(null)}
+                className={style.modalContent}
+                overlayClassName={style.modalOverlay}
+                contentLabel="ReviewItemPost"
+            >
+                {selectedItem && (
+                    <ReviewItemPost item={selectedItem} onClose={() => setSelectedItem(null)} />
+                )}
+            </Modal>
         </div>
+
+
+
     );
 };
 
