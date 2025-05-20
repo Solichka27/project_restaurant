@@ -34,9 +34,10 @@ const ReviewItemPost = ({ item, onClose, onPrev, onNext }) => {
                         <p className={style.hashtags}>{item.hashtags}</p>
                     </div>
 
-                    <div className={style.separator}></div>
-
-                    <p className={style.data}>{item.data}</p>
+                    <div className={style.blockDate}>
+                        <div className={style.separator}></div>
+                        <p className={style.date}>{item.date}</p>
+                    </div>
                 </div>
             </div>
         </div>

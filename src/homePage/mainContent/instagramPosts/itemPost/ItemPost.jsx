@@ -45,7 +45,7 @@ const ItemPost = () => {
         <div className={style.sliderWrapper}>
             <Slider {...settings}>
                 {ItemPostConst.map((item, index) => (
-                    <div key={index} className={style.slideItem} onClick={() => setSelectedItem(item)}>
+                    <div key={index} className={style.slideItem} onClick={() => setSelectedItem({ item, index })}>
                         <div className={style.imageContainer}>
                             <img src={item.img} alt={`item-${index}`} />
                             <div className={style.overlay}>{item.text}</div>
@@ -63,7 +63,22 @@ const ItemPost = () => {
                 contentLabel="ReviewItemPost"
             >
                 {selectedItem && (
-                    <ReviewItemPost item={selectedItem} onClose={() => setSelectedItem(null)} />
+                    <ReviewItemPost
+                        item={selectedItem.item}
+                        onClose={() => setSelectedItem(null)}
+                        onPrev={() => {
+                            const prevIndex = selectedItem.index - 1;
+                            if (prevIndex >= 0) {
+                                setSelectedItem({ item: ItemPostConst[prevIndex], index: prevIndex });
+                            }
+                        }}
+                        onNext={() => {
+                            const nextIndex = selectedItem.index + 1;
+                            if (nextIndex < ItemPostConst.length) {
+                                setSelectedItem({ item: ItemPostConst[nextIndex], index: nextIndex });
+                            }
+                        }}
+                    />
                 )}
             </Modal>
         </div>

@@ -77,7 +77,6 @@
     right: 10px;
 }
 
-
 .modalOverlay {
     position: fixed;
     top: 0;
@@ -93,9 +92,7 @@
 
 .modalContent {
     background: white;
-    padding: 30px;
     max-width: 1200px;
-    max-height: 700px;
     overflow-y: auto;
     position: relative;
 }
