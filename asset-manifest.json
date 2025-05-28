@@ -1,8 +1,8 @@
 {
   "files": {
-    "main.css": "/project_restaurant/static/css/main.45225fb6.css",
-    "main.js": "/project_restaurant/static/js/main.64e70a24.js",
-    "static/js/453.fc0a5de9.chunk.js": "/project_restaurant/static/js/453.fc0a5de9.chunk.js",
+    "main.css": "/project_restaurant/static/css/main.1e55f33c.css",
+    "main.js": "/project_restaurant/static/js/main.91d22779.js",
+    "static/js/453.65fcdbfd.chunk.js": "/project_restaurant/static/js/453.65fcdbfd.chunk.js",
     "static/media/mainPhoto.png": "/project_restaurant/static/media/mainPhoto.04c64889cc43bc33db83.png",
     "static/media/orderCard1.png": "/project_restaurant/static/media/orderCard1.735e27797084897915d0.png",
     "static/media/orderCard3.png": "/project_restaurant/static/media/orderCard3.46e4a76be38429ea3159.png",
@@ -23,12 +23,12 @@
     "static/media/slick.ttf": "/project_restaurant/static/media/slick.c94f7671dcc99dce43e2.ttf",
     "static/media/slick.woff": "/project_restaurant/static/media/slick.295183786cd8a1389865.woff",
     "index.html": "/project_restaurant/index.html",
-    "main.45225fb6.css.map": "/project_restaurant/static/css/main.45225fb6.css.map",
-    "main.64e70a24.js.map": "/project_restaurant/static/js/main.64e70a24.js.map",
-    "453.fc0a5de9.chunk.js.map": "/project_restaurant/static/js/453.fc0a5de9.chunk.js.map"
+    "main.1e55f33c.css.map": "/project_restaurant/static/css/main.1e55f33c.css.map",
+    "main.91d22779.js.map": "/project_restaurant/static/js/main.91d22779.js.map",
+    "453.65fcdbfd.chunk.js.map": "/project_restaurant/static/js/453.65fcdbfd.chunk.js.map"
   },
   "entrypoints": [
-    "static/css/main.45225fb6.css",
-    "static/js/main.64e70a24.js"
+    "static/css/main.1e55f33c.css",
+    "static/js/main.91d22779.js"
   ]
 }
