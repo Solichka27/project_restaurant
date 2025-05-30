@@ -1,8 +1,7 @@
-import OrderCard1 from './../../image/homePage/fourCardMenu/orderCard1.png';
-import OrderCard2 from './../../image/homePage/fourCardMenu/orderCard2.png';
-import OrderCard3 from './../../image/homePage/fourCardMenu/orderCard3.png';
-import OrderCard4 from './../../image/homePage/fourCardMenu/orderCard4.png';
-
+import OrderCard1 from '../../assets/image/homePage/fourCardMenu/orderCard1.png';
+import OrderCard2 from '../../assets/image/homePage/fourCardMenu/orderCard2.png';
+import OrderCard3 from '../../assets/image/homePage/fourCardMenu/orderCard3.png';
+import OrderCard4 from '../../assets/image/homePage/fourCardMenu/orderCard4.png';
 
 const FourCardMenuConst = [
     { img: OrderCard1, text: "starteкs", link: "/product/1" },
