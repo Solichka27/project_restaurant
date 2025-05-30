@@ -1,5 +1,5 @@
 import style from './ReviewItemPost.module.css';
-import LogoInstagram from '../../../../../image/homePage/header/logoInstagram.png';
+import LogoInstagram from '../../../../../assets/image/homePage/header/logoInstagram.png';
 
 const ReviewItemPost = ({ item, onClose, onPrev, onNext }) => {
     if (!item) return null;

@@ -1,10 +1,10 @@
-import Yelp from '../../../image/homePage/mainContent/feedback/yelp.png';
-import Owl from '../../../image/homePage/mainContent/feedback/owl.png';
-import Cow from '../../../image/homePage/mainContent/feedback/cow.png';
+import Yelp from '../../../assets/image/homePage/mainContent/feedback/yelp.png';
+import Owl from '../../../assets/image/homePage/mainContent/feedback/owl.png';
+import Cow from '../../../assets/image/homePage/mainContent/feedback/cow.png';
 
-import YelpHover from '../../../image/homePage/mainContent/feedback/yelpHover.png';
-import OwlHover from '../../../image/homePage/mainContent/feedback/owlHover.png';
-import CowHover from '../../../image/homePage/mainContent/feedback/cowHover.png';
+import YelpHover from '../../../assets/image/homePage/mainContent/feedback/yelpHover.png';
+import OwlHover from '../../../assets/image/homePage/mainContent/feedback/owlHover.png';
+import CowHover from '../../../assets/image/homePage/mainContent/feedback/cowHover.png';
 
 const FeedbackConst = [
     {

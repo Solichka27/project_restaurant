@@ -1,6 +1,6 @@
 import { useState } from 'react';
 import style from './FeedbackItem.module.css';
-import QuotationMarks from '../../../../image/homePage/mainContent/feedback/quotationMarks.png';
+import QuotationMarks from '../../../../assets/image/homePage/mainContent/feedback/quotationMarks.png';
 
 
 const FeedbackItem = ({ icon, iconHover, url, title, text }) => {

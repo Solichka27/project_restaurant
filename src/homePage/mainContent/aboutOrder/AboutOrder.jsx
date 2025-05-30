@@ -1,5 +1,5 @@
 import style from './AboutOrder.module.css';
-import foodPhoto from '../../../image/homePage/mainContent/foodPhoto.jpeg';
+import foodPhoto from '../../../assets/image/homePage/mainContent/foodPhoto.jpeg';
 import About from './about/About';
 import Order from './order/Order';
 

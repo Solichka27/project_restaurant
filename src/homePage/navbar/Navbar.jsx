@@ -1,9 +1,9 @@
 import React from 'react';
 import { NavLink } from 'react-router-dom';
 import style from './Navbar.module.css';
-import logoFacebook from './../../image/homePage/header/logoFacebook.png';
-import logoInstagram from './../../image/homePage/header/logoInstagram.png';
-import logoTwitter from './../../image/homePage/header/logoTwitter.png';
+import logoFacebook from '../../assets/image/homePage/header/logoFacebook.png';
+import logoInstagram from '../../assets/image/homePage/header/logoInstagram.png';
+import logoTwitter from '../../assets/image/homePage/header/logoTwitter.png';
 
 const Navbar = (props) => {
     return (
@@ -12,7 +12,7 @@ const Navbar = (props) => {
                 
                 <div className={style.address}>140 WEST 4TH ST</div>
                 <div className={style.links}>
-                    <NavLink to="/" className={style.link}>HOME</NavLink>
+                    <NavLink to="/project_restaurant" className={style.link}>HOME</NavLink>
                     <NavLink to="/order" className={style.link}>ORDER</NavLink>
                     <NavLink to="/menus" className={style.link}>MENUS</NavLink>
                     <NavLink to="/gift-cards" className={style.link}>GIFT CARDS</NavLink>
