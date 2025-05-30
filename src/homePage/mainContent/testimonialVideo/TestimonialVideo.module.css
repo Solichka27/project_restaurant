@@ -1,0 +1,30 @@
+.mainContent {
+    text-align: center;
+    justify-content: center;
+    display: flex;
+    gap: 40px;
+    margin-bottom: 40px;
+}
+
+.videoWrapper {
+    display: flex;
+}
+
+.textWrapper {
+    display: inline;
+    text-align: left;
+    width: 430px;
+}
+
+.tittle {
+    font-size: 32px;
+}
+
+.subtitle {
+    color: #8e0e0b;
+    font-size: 32px;
+}
+
+.author {
+    text-align: right;
+}
