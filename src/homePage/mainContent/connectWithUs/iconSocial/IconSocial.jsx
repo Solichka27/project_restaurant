@@ -1,7 +1,7 @@
 import style from './IconSocial.module.css';
-import iconFacebook from '../../../../image/homePage/mainContent/connectWithUs/iconSocial/iconFacebook.png';
-import iconTwitter from '../../../../image/homePage/mainContent/connectWithUs/iconSocial/iconTwitter.png';
-import iconInstagram from '../../../../image/homePage/mainContent/connectWithUs/iconSocial/iconInstagram.png';
+import iconFacebook from '../../../../assets/image/homePage/mainContent/connectWithUs/iconSocial/iconFacebook.png';
+import iconTwitter from '../../../../assets/image/homePage/mainContent/connectWithUs/iconSocial/iconTwitter.png';
+import iconInstagram from '../../../../assets/image/homePage/mainContent/connectWithUs/iconSocial/iconInstagram.png';
 
 const IconSocial = () => {
     return (

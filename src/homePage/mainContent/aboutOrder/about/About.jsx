@@ -1,7 +1,7 @@
 import style from './About.module.css';
-import logoEmail from '../../../../image/homePage/aboutOrder/email.png';
-import logoMaps from '../../../../image/homePage/aboutOrder/maps.png';
-import logoPhone from '../../../../image/homePage/aboutOrder/phone.png';
+import logoEmail from '../../../../assets/image/homePage/aboutOrder/email.png';
+import logoMaps from '../../../../assets/image/homePage/aboutOrder/maps.png';
+import logoPhone from '../../../../assets/image/homePage/aboutOrder/phone.png';
 import LinkButton from '../../../fourCardMenu/button/LinkButton';
 
 const About = () => {

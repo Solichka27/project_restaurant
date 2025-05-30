@@ -1,6 +1,6 @@
 import React from 'react';
-import mainPhoto from './../../../image/homePage/header/mainPhoto.png';
-import logo from './../../../image/homePage/header/logo.png';
+import mainPhoto from '../../assets/image/homePage/header/mainPhoto.png';
+import logo from '../../assets/image/homePage/header/logo.png';
 import style from './MainPhoto.module.css';
 
 const MainPhoto = (props) => {

@@ -1,6 +1,6 @@
 import style from './ConnectWithUs.module.css';
 import IconSocial from './iconSocial/IconSocial';
-import backgroundPhoto from '../../../image/homePage/mainContent/connectWithUs/connectWithUs.png'
+import backgroundPhoto from '../../../assets/image/homePage/mainContent/connectWithUs/connectWithUs.png'
 
 const ConnectWithUs = () => {
     return (

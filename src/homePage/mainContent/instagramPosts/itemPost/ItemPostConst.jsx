@@ -1,10 +1,10 @@
-import Post1 from '../../../../image/homePage/mainContent/postInstagram/post1.png';
-import Post2 from '../../../../image/homePage/mainContent/postInstagram/post2.png';
-import Post3 from '../../../../image/homePage/mainContent/postInstagram/post3.png';
-import Post4 from '../../../../image/homePage/mainContent/postInstagram/post4.png';
-import Post5 from '../../../../image/homePage/mainContent/postInstagram/post5.png';
-import Post6 from '../../../../image/homePage/mainContent/postInstagram/post6.png';
-import Post7 from '../../../../image/homePage/mainContent/postInstagram/post7.png';
+import Post1 from '../../../../assets/image/homePage/mainContent/postInstagram/post1.png';
+import Post2 from '../../../../assets/image/homePage/mainContent/postInstagram/post2.png';
+import Post3 from '../../../../assets/image/homePage/mainContent/postInstagram/post3.png';
+import Post4 from '../../../../assets/image/homePage/mainContent/postInstagram/post4.png';
+import Post5 from '../../../../assets/image/homePage/mainContent/postInstagram/post5.png';
+import Post6 from '../../../../assets/image/homePage/mainContent/postInstagram/post6.png';
+import Post7 from '../../../../assets/image/homePage/mainContent/postInstagram/post7.png';
 
 const ItemPostConst = [
     {
