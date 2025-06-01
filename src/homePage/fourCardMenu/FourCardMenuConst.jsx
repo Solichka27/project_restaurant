@@ -4,10 +4,10 @@ import OrderCard3 from '../../assets/image/homePage/fourCardMenu/orderCard3.png'
 import OrderCard4 from '../../assets/image/homePage/fourCardMenu/orderCard4.png';
 
 const FourCardMenuConst = [
-    { img: OrderCard1, text: "starteкs", link: "/product/1" },
-    { img: OrderCard2, text: "sandwiches", link: "/product/2" },
-    { img: OrderCard3, text: "mains", link: "/product/3" },
-    { img: OrderCard4, text: "desserts", link: "/product/4" },
+    { img: OrderCard1, text: "starters", link: "/menus#starters" },
+    { img: OrderCard2, text: "sandwiches", link: "/menus#sandwiches" },
+    { img: OrderCard3, text: "mains", link: "/menus#mains" },
+    { img: OrderCard4, text: "desserts", link: "/menus#desserts" },
 ];
 
 export default FourCardMenuConst;
