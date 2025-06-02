@@ -1,3 +1,14 @@
-.wrapper{
+.menus {
+    text-align: center;
+    margin-bottom: 40px;
+}
+
+.wrapper {
     display: flex;
+    gap: 150px;
+}
+
+.wrapperFilter {
+    margin-top: 50px;
+    margin-left: 40px;
 }

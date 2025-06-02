@@ -1,0 +1,68 @@
+.wrapperFilter {
+    display: grid;
+    gap: 20px;
+    padding: 20px;
+}
+
+.nameFilter {
+    position: relative;
+    padding-left: 30px;
+    cursor: pointer;
+    font-size: 16px;
+    user-select: none;
+    color: #333;
+}
+
+.nameFilter input[type="checkbox"] {
+    position: absolute;
+    opacity: 0;
+    cursor: pointer;
+}
+
+.nameFilter::before {
+    content: "";
+    position: absolute;
+    left: 0;
+    top: 50%;
+    transform: translateY(-50%);
+    width: 20px;
+    height: 20px;
+    border: 2px solid #999;
+    border-radius: 4px;
+    background-color: #fff;
+    transition: all 0.2s ease;
+}
+
+.nameFilter input[type="checkbox"]:checked~span::before {
+    background-color: #ccc;
+}
+
+.nameFilter input[type="checkbox"]:checked+span::after {
+    content: "";
+    position: absolute;
+    left: -22px;
+    top: 2px;
+    width: 7px;
+    height: 12px;
+    border: solid;
+    border-width: 0 2px 2px 0;
+    transform: rotate(45deg);
+}
+
+.nameFilter span {
+    position: relative;
+    padding-left: 8px;
+}
+
+.nameFilter input[type="checkbox"]:checked+span::before {
+    content: "";
+    position: absolute;
+    left: -30px;
+    top: 50%;
+    transform: translateY(-50%);
+    width: 20px;
+    height: 20px;
+    background-color: #ccc;
+    border: 2px solid #999;
+    border-radius: 4px;
+}
