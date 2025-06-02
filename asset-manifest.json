@@ -1,7 +1,7 @@
 {
   "files": {
-    "main.css": "/project_restaurant/static/css/main.044b46ec.css",
-    "main.js": "/project_restaurant/static/js/main.e311bfa2.js",
+    "main.css": "/project_restaurant/static/css/main.aabb4b29.css",
+    "main.js": "/project_restaurant/static/js/main.038451ab.js",
     "static/js/453.65fcdbfd.chunk.js": "/project_restaurant/static/js/453.65fcdbfd.chunk.js",
     "static/media/mainPhoto.png": "/project_restaurant/static/media/mainPhoto.a0bc1d7203b7fb1a1ce3.png",
     "static/media/post4.png": "/project_restaurant/static/media/post4.d2d183ba08eb96c4a0a0.png",
@@ -16,7 +16,23 @@
     "static/media/post1.png": "/project_restaurant/static/media/post1.33f5dfa432a8d3d42ec6.png",
     "static/media/post5.png": "/project_restaurant/static/media/post5.fa622737614c12c453e4.png",
     "static/media/connectWithUs.png": "/project_restaurant/static/media/connectWithUs.3951b65a2610c217e9f5.png",
+    "static/media/dessert3.png": "/project_restaurant/static/media/dessert3.cf919c5ffbc82bf37354.png",
+    "static/media/main3.png": "/project_restaurant/static/media/main3.28557064830f7aa6eeba.png",
+    "static/media/main5.png": "/project_restaurant/static/media/main5.e7d9995f5d370989270c.png",
+    "static/media/sandwiches1.png": "/project_restaurant/static/media/sandwiches1.a8d0269d95550287e4ff.png",
+    "static/media/starter3.png": "/project_restaurant/static/media/starter3.c615b8611cc875f8b603.png",
     "static/media/post2.png": "/project_restaurant/static/media/post2.4df0de60796ecc9be6e5.png",
+    "static/media/main6.png": "/project_restaurant/static/media/main6.62949a0082aa16193df1.png",
+    "static/media/sandwiches2.png": "/project_restaurant/static/media/sandwiches2.6dde1ad94ba61520e046.png",
+    "static/media/main2.png": "/project_restaurant/static/media/main2.06ccd3b152013def0831.png",
+    "static/media/sandwiches3.png": "/project_restaurant/static/media/sandwiches3.034dd2456162f173bf48.png",
+    "static/media/starter2.png": "/project_restaurant/static/media/starter2.41a0cf201ee6a7af6b1d.png",
+    "static/media/starter1.png": "/project_restaurant/static/media/starter1.65560c9d69540e53f7b3.png",
+    "static/media/dessert2.png": "/project_restaurant/static/media/dessert2.966fbaba07ae524243d6.png",
+    "static/media/starter4.png": "/project_restaurant/static/media/starter4.f641509bfd834fce1623.png",
+    "static/media/main1.png": "/project_restaurant/static/media/main1.562f3ecbb503670e1d5f.png",
+    "static/media/dessert1.png": "/project_restaurant/static/media/dessert1.cef9d37b0e43c6bac07c.png",
+    "static/media/main4.png": "/project_restaurant/static/media/main4.3a674714cc8a5da32ab3.png",
     "static/media/quotationMarks.png": "/project_restaurant/static/media/quotationMarks.455f704a4e702c3527cc.png",
     "static/media/logo.png": "/project_restaurant/static/media/logo.2a26b87e336ff188c046.png",
     "static/media/cowHover.png": "/project_restaurant/static/media/cowHover.ec97c2e80b990b080a55.png",
@@ -30,12 +46,12 @@
     "static/media/slick.ttf": "/project_restaurant/static/media/slick.c94f7671dcc99dce43e2.ttf",
     "static/media/slick.woff": "/project_restaurant/static/media/slick.295183786cd8a1389865.woff",
     "index.html": "/project_restaurant/index.html",
-    "main.044b46ec.css.map": "/project_restaurant/static/css/main.044b46ec.css.map",
-    "main.e311bfa2.js.map": "/project_restaurant/static/js/main.e311bfa2.js.map",
+    "main.aabb4b29.css.map": "/project_restaurant/static/css/main.aabb4b29.css.map",
+    "main.038451ab.js.map": "/project_restaurant/static/js/main.038451ab.js.map",
     "453.65fcdbfd.chunk.js.map": "/project_restaurant/static/js/453.65fcdbfd.chunk.js.map"
   },
   "entrypoints": [
-    "static/css/main.044b46ec.css",
-    "static/js/main.e311bfa2.js"
+    "static/css/main.aabb4b29.css",
+    "static/js/main.038451ab.js"
   ]
 }
