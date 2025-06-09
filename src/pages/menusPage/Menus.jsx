@@ -1,5 +1,4 @@
 import style from './Menus.module.css';
-//import ItemMenus from './itemMenus/ItemMenus';
 import FilterMenus from './filterMenus/FilterMenus';
 
 const Menus = () => {
@@ -13,7 +12,6 @@ const Menus = () => {
                 </div>
 
                 <div className={style.itemMenus}>
-                    {/* <ItemMenus /> */}
                 </div>
 
             </div>
