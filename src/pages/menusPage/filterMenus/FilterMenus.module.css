@@ -1,8 +1,11 @@
 .mainContent {
     display: flex;
-    flex-direction: column;
-    align-items: center;
     width: 100%;
+    max-width: 1300px;
+    gap: 120px;
+    align-items: flex-start;
+    padding: 0 20px;
+    margin-left: 100px;
 }
 
 .searchWrapper {
@@ -12,25 +15,14 @@
     margin: 20px 0;
 }
 
-.contentBody {
-    display: flex;
-    width: 100%;
-    max-width: 1300px;
-    gap: 40px;
-    align-items: flex-start;
-    padding: 0 20px;
-}
-
-/* Фільтр зліва */
 .wrapperFilter {
     display: flex;
     flex-direction: column;
     gap: 20px;
     min-width: 200px;
-    margin-top: 100px;
+    margin-top: 140px;
 }
 
-/* Меню страв справа */
 .wrapperMenus {
     flex: 1;
 }
@@ -96,4 +88,8 @@
     background-color: #ccc;
     border: 2px solid #999;
     border-radius: 4px;
-} 
+}
+
+.wrapperMenus {
+    margin-bottom: 100px;
+}

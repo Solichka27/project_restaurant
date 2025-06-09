@@ -12,7 +12,7 @@ const allItems = [
     ...Desserts.map(item => ({ ...item, category: 'Desserts', id: "desserts" })),
 ];
 
-// 🔍 Функція фільтрації
+
 const filterItems = (searchTerm, selectedCategories) => {
     const lowerSearch = searchTerm.toLowerCase();
 
@@ -33,16 +33,16 @@ const SearchMenus = ({ selectedCategories = [] }) => {
     const [filteredItems, setFilteredItems] = useState(allItems);
 
     useEffect(() => {
-    const safeSearch = searchTerm || '';
-    const safeCategories = selectedCategories || [];
+        const safeSearch = searchTerm || '';
+        const safeCategories = selectedCategories || [];
 
-    if (safeSearch.length < 3 && safeCategories.length === 0) {
-        setFilteredItems(allItems);
-    } else {
-        const results = filterItems(safeSearch, safeCategories);
-        setFilteredItems(results);
-    }
-}, [searchTerm, selectedCategories]);
+        if (safeSearch.length < 3 && safeCategories.length === 0) {
+            setFilteredItems(allItems);
+        } else {
+            const results = filterItems(safeSearch, safeCategories);
+            setFilteredItems(results);
+        }
+    }, [searchTerm, selectedCategories]);
 
     const groupedItems = filteredItems.reduce((acc, item) => {
         acc[item.category] = acc[item.category] ? [...acc[item.category], item] : [item];
