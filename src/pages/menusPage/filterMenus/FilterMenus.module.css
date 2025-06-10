@@ -1,7 +1,30 @@
+.mainContent {
+    display: flex;
+    width: 100%;
+    max-width: 1300px;
+    gap: 120px;
+    align-items: flex-start;
+    padding: 0 20px;
+    margin-left: 20px;
+}
+
+.searchWrapper {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    margin: 20px 0;
+}
+
 .wrapperFilter {
-    display: grid;
+    display: flex;
+    flex-direction: column;
     gap: 20px;
-    padding: 20px;
+    min-width: 200px;
+    margin-top: 140px;
+}
+
+.wrapperMenus {
+    flex: 1;
 }
 
 .nameFilter {
@@ -65,4 +88,8 @@
     background-color: #ccc;
     border: 2px solid #999;
     border-radius: 4px;
+}
+
+.wrapperMenus {
+    margin-bottom: 100px;
 }
