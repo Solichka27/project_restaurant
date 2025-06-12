@@ -1,0 +1,50 @@
+.wrapper {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: rgba(0, 0, 0, 0.7);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    z-index: 1000;
+}
+
+.modalContent {
+    background: white;
+    width: 1200px;
+    height: 600px;
+    position: relative;
+    display: flex;
+    padding: 40px;
+    gap: 40px;
+    box-sizing: border-box;
+}
+
+.closeButton {
+    position: absolute;
+    right: 35px;
+    font-size: 24px;
+    background: none;
+    border: none;
+    cursor: pointer;
+}
+
+.closeButton:hover {
+    border: 1px solid lightgray;
+}
+
+.blockText {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.price {
+    margin-top: 15px;
+    font-size: 16px;
+    color: #333;
+    word-break: break-word;
+    text-align: justify;
+}
