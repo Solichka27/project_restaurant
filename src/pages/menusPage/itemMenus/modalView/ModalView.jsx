@@ -1,17 +1,51 @@
 import style from './ModalView.module.css';
+import {useState, useEffect} from 'react';
 
 const ModalView = ({ item, onClose }) => {
+
+    const [counter, setCounter] = useState(1);
+    const [priceDish, setPrice] = useState(item.price);
+
+    useEffect(() =>{
+        setPrice(item.price * counter);
+    }, [counter, item.price]);
+
+
     if (!item) return null;
+    
+    const increment = (e) =>{
+        e.stopPropagation();
+        setCounter(prev => prev + 1);
+    }
+
+    const decrement = (e) =>{
+        e.stopPropagation();
+        if(counter >1 ){
+        setCounter(prev => prev - 1);
+        }
+    }
+
+    
 
     return (
         <div className={style.wrapper} onClick={onClose}>
-            <div className={style.modalContent}>
+            <div className={style.modalContent} onClick={(e) => e.stopPropagation()}>
                 <button onClick={onClose} className={style.closeButton}>×</button>
                 <img src={item.img} alt={item.name} className={style.modalImage} />
                 <div className={style.blockText}>
                     <h3 className={style.name}>{item.name}</h3>
                     <p className={style.ingredients}>{item.ingredients}</p>
                     <p className={style.price}>{item.price}</p>
+
+                    <div className={style.counter}>
+                        <button onClick={increment} >+</button>
+                        <p>{counter}</p>
+                        <button onClick={decrement}>-</button>
+                    </div>
+
+                    <div className={style.addOrder}>
+                        <button>Add to my order {priceDish}</button>
+                    </div>
                 </div>
 
             </div>
