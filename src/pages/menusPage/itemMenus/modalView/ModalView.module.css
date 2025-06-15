@@ -2,9 +2,9 @@
     position: fixed;
     top: 0;
     left: 0;
-    right: 0;
-    bottom: 0;
-    background: rgba(0, 0, 0, 0.7);
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.4);
     display: flex;
     align-items: center;
     justify-content: center;
@@ -13,38 +13,104 @@
 
 .modalContent {
     background: white;
-    width: 1200px;
-    height: 600px;
+    max-width: 600px;
+    overflow: hidden;
+    box-shadow: 0 10px 40px rgba(0, 0, 0, 0.2);
     position: relative;
-    display: flex;
-    padding: 40px;
-    gap: 40px;
-    box-sizing: border-box;
+    height: 620px;
 }
 
 .closeButton {
     position: absolute;
-    right: 35px;
+    top: 16px;
+    right: 16px;
     font-size: 24px;
     background: none;
     border: none;
     cursor: pointer;
+    background-color: white;
+    border-radius: 5px;
 }
 
-.closeButton:hover {
-    border: 1px solid lightgray;
+.modalImage {
+    width: 600px;
+    height: 300px;
+    object-fit: cover;
 }
 
 .blockText {
-    display: flex;
-    flex-direction: column;
-    gap: 10px;
+    padding: 24px;
+}
+
+.name {
+    font-size: 22px;
+    font-weight: 600;
+}
+
+.ingredients {
+    font-size: 15px;
+    color: #555;
+    margin-bottom: 16px;
 }
 
 .price {
-    margin-top: 15px;
     font-size: 16px;
-    color: #333;
-    word-break: break-word;
-    text-align: justify;
+    font-weight: 500;
+    margin-bottom: 20px;
+}
+
+.blockCounter {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    width: 120px;
+    height: 40px;
+    border: 1px solid #ccc;
+    border-radius: 6px;
+    overflow: hidden;
+    background-color: #fff;
+    margin-bottom: 24px;
+}
+
+.decrement,
+.increment {
+    width: 40px;
+    height: 100%;
+    border: none;
+    background: none;
+    font-size: 20px;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.counter {
+    flex: 1;
+    text-align: center;
+    font-size: 16px;
+    font-weight: 500;
+    margin: 0;
+}
+
+.addOrder {
+    display: flex;
+    justify-content: center;
+}
+
+.order {
+    background-color: #9c7e5c;
+    color: white;
+    font-size: 16px;
+    padding: 12px 24px;
+    border: none;
+    border-radius: 6px;
+    cursor: pointer;
+    width: 100%;
+    font-weight: 500;
+    transition: background-color 0.3s ease;
+}
+
+.order:hover {
+    background-color: #7e6246;
 }

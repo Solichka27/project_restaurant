@@ -12,12 +12,12 @@ const ViewItemMenus = ({ title, items, id, onItemClick }) => (
                         <img src={item.img} alt={`item-${index}`} />
                         <div className={style.nameDish}>{item.name}</div>
                         <div className={style.ingredient}>{item.ingredients}</div>
-                        <div className={style.price}>{item.price}</div>
+                        <div className={style.price}>{item.price}$</div>
                     </div>
                 </div>
             ))}
         </div>
-        
+
     </div>
 );
 export default ViewItemMenus;

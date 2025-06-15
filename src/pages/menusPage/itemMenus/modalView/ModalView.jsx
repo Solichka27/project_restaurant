@@ -1,31 +1,29 @@
 import style from './ModalView.module.css';
-import {useState, useEffect} from 'react';
+import { useState, useEffect } from 'react';
 
 const ModalView = ({ item, onClose }) => {
 
     const [counter, setCounter] = useState(1);
     const [priceDish, setPrice] = useState(item.price);
 
-    useEffect(() =>{
+    useEffect(() => {
         setPrice(item.price * counter);
     }, [counter, item.price]);
 
 
     if (!item) return null;
-    
-    const increment = (e) =>{
+
+    const increment = (e) => {
         e.stopPropagation();
         setCounter(prev => prev + 1);
     }
 
-    const decrement = (e) =>{
+    const decrement = (e) => {
         e.stopPropagation();
-        if(counter >1 ){
-        setCounter(prev => prev - 1);
+        if (counter > 1) {
+            setCounter(prev => prev - 1);
         }
     }
-
-    
 
     return (
         <div className={style.wrapper} onClick={onClose}>
@@ -35,16 +33,16 @@ const ModalView = ({ item, onClose }) => {
                 <div className={style.blockText}>
                     <h3 className={style.name}>{item.name}</h3>
                     <p className={style.ingredients}>{item.ingredients}</p>
-                    <p className={style.price}>{item.price}</p>
+                    <p className={style.price}>{item.price}$</p>
 
-                    <div className={style.counter}>
-                        <button onClick={increment} >+</button>
-                        <p>{counter}</p>
-                        <button onClick={decrement}>-</button>
+                    <div className={style.blockCounter}>
+                        <button className={style.decrement} onClick={decrement}>-</button>
+                        <p className={style.counter}>{counter}</p>
+                        <button className={style.increment} onClick={increment} >+</button>
                     </div>
 
                     <div className={style.addOrder}>
-                        <button>Add to my order {priceDish}</button>
+                        <button className={style.order}>Add to my order {priceDish}$</button>
                     </div>
                 </div>
 
