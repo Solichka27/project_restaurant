@@ -1,9 +1,11 @@
 import { useState, useEffect } from 'react';
 import style from './SearchMenus.module.css';
+import Modal from 'react-modal';
 
 import { Starters, Sandwiches, Mains, Desserts } from '../itemMenus/ItemMenusConst';
 import ViewItemMenus from "../itemMenus/viewItemMenus/ViewItemMenus";
 import IconSearch from "../../../assets/image/menus/iconSearch.svg";
+import ModalView from '../itemMenus/modalView/ModalView';
 
 const allItems = [
     ...Starters.map(item => ({ ...item, category: 'Starters', id: "starters" })),
@@ -31,6 +33,7 @@ const filterItems = (searchTerm, selectedCategories) => {
 const SearchMenus = ({ selectedCategories = [] }) => {
     const [searchTerm, setSearchTerm] = useState('');
     const [filteredItems, setFilteredItems] = useState(allItems);
+    const [selectedItem, setSelectedItem] = useState(null);
 
     useEffect(() => {
         const safeSearch = searchTerm || '';
@@ -67,10 +70,25 @@ const SearchMenus = ({ selectedCategories = [] }) => {
             ) : (
                 Object.entries(groupedItems).map(([category, items]) => (
                     <div key={category} id={items[0].id}>
-                        <ViewItemMenus title={category} items={items} />
+                        <ViewItemMenus title={category} items={items} onItemClick={(item) => setSelectedItem(item)} />
                     </div>
                 ))
             )}
+
+            <Modal
+                isOpen={!!selectedItem}
+                onRequestClose={() => setSelectedItem(null)}
+                className={style.modalContent}
+                overlayClassName={style.modalOverlay}
+                contentLabel="ReviewItemPost"
+            >
+                {selectedItem && (
+                    <ModalView
+                        item={selectedItem}
+                        onClose={() => setSelectedItem(null)}
+                    />
+                )}
+            </Modal>
         </div>
     );
 };
