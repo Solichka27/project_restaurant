@@ -10,22 +10,17 @@ const ModalView = ({ item, onClose }) => {
         setPrice(item.price * counter);
     }, [counter, item.price]);
 
-
-    if (!item) return null;
-
     const increment = (e) => {
-        e.stopPropagation();
         setCounter(prev => prev + 1);
     }
 
     const decrement = (e) => {
-        e.stopPropagation();
         if (counter > 1) {
             setCounter(prev => prev - 1);
         }
     }
 
-    return (
+    return (item &&
         <div className={style.wrapper} onClick={onClose}>
             <div className={style.modalContent} onClick={(e) => e.stopPropagation()}>
                 <button onClick={onClose} className={style.closeButton}>×</button>
