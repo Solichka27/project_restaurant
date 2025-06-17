@@ -1,9 +1,15 @@
 import { useState, useRef } from 'react';
 import style from './FilterMenus.module.css';
 import SearchMenus from '../searchMenus/SearchMenus';
+import { FaShoppingCart } from 'react-icons/fa';
+
+
+import Basket from "../basket/Basket";
 
 const FilterMenus = () => {
+    const [isCartOpen, setIsCartOpen] = useState(false);
     const [selectedCategories, setSelectedCategories] = useState([]);
+    const [cartItems, setCartItems] = useState([]); 
     const sectionRefs = {
         starters: useRef(null),
         sandwiches: useRef(null),
@@ -47,7 +53,16 @@ const FilterMenus = () => {
                     selectedCategories={selectedCategories}
                     sectionRefs={sectionRefs}
                 />
+                <button className={style.cartButton} onClick={() => setIsCartOpen(true)}>
+                    <FaShoppingCart size={24} />
+                </button>
             </div>
+            {isCartOpen && (
+                <div className={style.cartModal}>
+                    <button className={style.closeButton} onClick={() => setIsCartOpen(false)}>×</button>
+                    <Basket items={cartItems}/>
+                </div>
+            )}
         </div>
     );
 };
