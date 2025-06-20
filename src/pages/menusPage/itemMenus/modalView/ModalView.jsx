@@ -1,8 +1,7 @@
 import style from './ModalView.module.css';
 import { useState, useEffect } from 'react';
 
-const ModalView = ({ item, onClose }) => {
-
+const ModalView = ({ item, onClose, onAddToBasket  }) => {
     const [counter, setCounter] = useState(1);
     const [priceDish, setPrice] = useState(item.price);
 
@@ -19,6 +18,17 @@ const ModalView = ({ item, onClose }) => {
             setCounter(prev => prev - 1);
         }
     }
+    const handleAddToBasket = () => {
+        const orderItem = {
+            name: item.name,
+            quantity: counter,
+            price: item.price,
+            img: item.img, 
+        };
+        onAddToBasket(orderItem);
+        onClose();
+    };
+
 
     return (item &&
         <div className={style.wrapper} onClick={onClose}>
@@ -37,7 +47,7 @@ const ModalView = ({ item, onClose }) => {
                     </div>
 
                     <div className={style.addOrder}>
-                        <button className={style.order}>Add to my order {priceDish}$</button>
+                        <button className={style.order} onClick={handleAddToBasket}>Add to my order {priceDish}$</button>
                     </div>
                 </div>
 

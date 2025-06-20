@@ -9,7 +9,8 @@ import Basket from "../basket/Basket";
 const FilterMenus = () => {
     const [isCartOpen, setIsCartOpen] = useState(false);
     const [selectedCategories, setSelectedCategories] = useState([]);
-    const [cartItems, setCartItems] = useState([]); 
+    const [cartItems, setCartItems] = useState([]);
+    const [basketItems, setBasketItems] = useState([]);
     const sectionRefs = {
         starters: useRef(null),
         sandwiches: useRef(null),
@@ -24,6 +25,21 @@ const FilterMenus = () => {
         } else {
             setSelectedCategories(prev => prev.filter(cat => cat !== id));
         }
+    };
+
+    const handleAddToBasket = (newItem) => {
+        setBasketItems(prevItems => {
+            const existingItem = prevItems.find(item => item.name === newItem.name);
+            if (existingItem) {
+                return prevItems.map(item =>
+                    item.name === newItem.name
+                        ? { ...item, quantity: item.quantity + newItem.quantity }
+                        : item
+                );
+            } else {
+                return [...prevItems, newItem];
+            }
+        });
     };
 
     return (
@@ -52,6 +68,7 @@ const FilterMenus = () => {
                 <SearchMenus
                     selectedCategories={selectedCategories}
                     sectionRefs={sectionRefs}
+                    onAddToBasket={handleAddToBasket}
                 />
                 <button className={style.cartButton} onClick={() => setIsCartOpen(true)}>
                     <FaShoppingCart size={24} />
@@ -60,7 +77,7 @@ const FilterMenus = () => {
             {isCartOpen && (
                 <div className={style.cartModal}>
                     <button className={style.closeButton} onClick={() => setIsCartOpen(false)}>×</button>
-                    <Basket items={cartItems}/>
+                    <Basket items={basketItems}  />
                 </div>
             )}
         </div>

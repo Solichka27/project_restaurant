@@ -6,6 +6,7 @@ import { Starters, Sandwiches, Mains, Desserts } from '../itemMenus/ItemMenusCon
 import ViewItemMenus from "../itemMenus/viewItemMenus/ViewItemMenus";
 import IconSearch from "../../../assets/image/menus/iconSearch.svg";
 import ModalView from '../itemMenus/modalView/ModalView';
+import Basket from '../basket/Basket';
 
 const allItems = [
     ...Starters.map(item => ({ ...item, category: 'Starters', id: "starters" })),
@@ -30,7 +31,7 @@ const filterItems = (searchTerm, selectedCategories) => {
     });
 };
 
-const SearchMenus = ({ selectedCategories = [] }) => {
+const SearchMenus = ({  selectedCategories, sectionRefs, onAddToBasket} ) => {
     const [searchTerm, setSearchTerm] = useState('');
     const [filteredItems, setFilteredItems] = useState(allItems);
     const [selectedItem, setSelectedItem] = useState(null);
@@ -52,6 +53,7 @@ const SearchMenus = ({ selectedCategories = [] }) => {
         return acc;
     }, {});
 
+
     return (
         <div className={style.mainContainer}>
             <div className={style.inputWrapper}>
@@ -64,7 +66,6 @@ const SearchMenus = ({ selectedCategories = [] }) => {
                     onChange={(e) => setSearchTerm(e.target.value)}
                 />
             </div>
-
             {searchTerm.length >= 3 && filteredItems.length === 0 ? (
                 <p className={style.notFound}>Нічого не знайдено</p>
             ) : (
@@ -86,6 +87,7 @@ const SearchMenus = ({ selectedCategories = [] }) => {
                     <ModalView
                         item={selectedItem}
                         onClose={() => setSelectedItem(null)}
+                        onAddToBasket={onAddToBasket} 
                     />
                 )}
             </Modal>
