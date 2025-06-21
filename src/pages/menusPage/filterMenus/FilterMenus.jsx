@@ -9,7 +9,6 @@ import Basket from "../basket/Basket";
 const FilterMenus = () => {
     const [isCartOpen, setIsCartOpen] = useState(false);
     const [selectedCategories, setSelectedCategories] = useState([]);
-    const [cartItems, setCartItems] = useState([]);
     const [basketItems, setBasketItems] = useState([]);
     const sectionRefs = {
         starters: useRef(null),

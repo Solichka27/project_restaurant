@@ -23,7 +23,7 @@ const ModalView = ({ item, onClose, onAddToBasket  }) => {
             name: item.name,
             quantity: counter,
             price: item.price,
-            img: item.img, 
+            img: item.img,
         };
         onAddToBasket(orderItem);
         onClose();

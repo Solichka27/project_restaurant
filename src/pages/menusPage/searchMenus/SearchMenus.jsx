@@ -6,7 +6,6 @@ import { Starters, Sandwiches, Mains, Desserts } from '../itemMenus/ItemMenusCon
 import ViewItemMenus from "../itemMenus/viewItemMenus/ViewItemMenus";
 import IconSearch from "../../../assets/image/menus/iconSearch.svg";
 import ModalView from '../itemMenus/modalView/ModalView';
-import Basket from '../basket/Basket';
 
 const allItems = [
     ...Starters.map(item => ({ ...item, category: 'Starters', id: "starters" })),
