@@ -76,7 +76,7 @@ const FilterMenus = () => {
             {isCartOpen && (
                 <div className={style.cartModal}>
                     <button className={style.closeButton} onClick={() => setIsCartOpen(false)}>×</button>
-                    <Basket items={basketItems}  />
+                    <Basket items={basketItems}  setItems={setBasketItems} />
                 </div>
             )}
         </div>

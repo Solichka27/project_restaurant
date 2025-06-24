@@ -1,9 +1,9 @@
 import style from './ModalView.module.css';
 import { useState, useEffect } from 'react';
 
-const ModalView = ({ item, onClose, onAddToBasket  }) => {
-    const [counter, setCounter] = useState(1);
-    const [priceDish, setPrice] = useState(item.price);
+const ModalView = ({ item, onClose, onAddToBasket }) => {
+    const [counter, setCounter] = useState(() => item.quantity || 1);
+    const [priceDish, setPrice] = useState(() => item.price * (item.quantity || 1));
 
     useEffect(() => {
         setPrice(item.price * counter);
