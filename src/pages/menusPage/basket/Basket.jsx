@@ -1,6 +1,7 @@
 import style from './Basket.module.css';
 import { useState } from 'react';
 import ModalView from '../itemMenus/modalView/ModalView';
+import PromoCodeConst from './PromoCodeConst';
 
 import EmptyBasket from "../../../assets/image/menus/emptyBasket.png"
 
@@ -8,6 +9,9 @@ const Basket = ({ items = [], setItems }) => {
     const [showPromo, setShowPromo] = useState(false);
     const [showNotes, setShowNotes] = useState(false);
     const [editingItem, setEditingItem] = useState(null);
+    const [promoInput, setPromoInput] = useState('');
+    const [validPromo, setValidPromo] = useState(null);
+    const [discountAmount, setDiscountAmount] = useState(0);
 
     const handleEdit = (item) => {
         setEditingItem(item);
@@ -31,8 +35,24 @@ const Basket = ({ items = [], setItems }) => {
         setItems(updatedItems);
     };
 
+    const handleApplyPromo = () => {
+        const foundPromo = PromoCodeConst.find(
+            code => code.promo.toLowerCase() === promoInput.trim().toLowerCase()
+        );
+
+        if (foundPromo) {
+            setValidPromo(foundPromo);
+            const discount = (subtotal * foundPromo.discount) / 100;
+            setDiscountAmount(discount);
+        } else {
+            setValidPromo(null);
+            setDiscountAmount(0);
+        }
+    };
+
 
     const subtotal = items.reduce((acc, item) => acc + item.price * item.quantity, 0);
+    const totalAfterDiscount = subtotal - discountAmount;
 
     return (
         <div className={style.basket}>
@@ -69,11 +89,45 @@ const Basket = ({ items = [], setItems }) => {
                             </h3>
                             {showPromo && (
                                 <>
-                                    <input type="text" placeholder='Enter Promo Code' />
-                                    <button>Apply</button>
+                                    <input
+                                        type="text"
+                                        placeholder="Enter Promo Code"
+                                        value={promoInput}
+                                        onChange={(e) => {
+                                            const value = e.target.value;
+                                            setPromoInput(value);
+
+                                            const foundPromo = PromoCodeConst.find(
+                                                code => code.promo.toLowerCase() === value.trim().toLowerCase()
+                                            );
+
+                                            if (foundPromo) {
+                                                setValidPromo(foundPromo);
+                                                const discount = (subtotal * foundPromo.discount) / 100;
+                                                setDiscountAmount(discount);
+                                            } else {
+                                                setValidPromo(null);
+                                                setDiscountAmount(0);
+                                            }
+                                        }}
+
+                                    />
+
+                                    <button
+                                        onClick={handleApplyPromo}
+                                        style={{
+                                            backgroundColor: validPromo ? '#9c7e5c' : '#ccc',
+                                            cursor: validPromo ? 'pointer' : 'not-allowed',
+                                            transition: '0.3s',
+                                        }}
+                                        disabled={!validPromo}
+                                    >
+                                        Apply
+                                    </button>
                                 </>
                             )}
                         </div>
+
 
                         <div className={style.orderNotes}>
                             <h3 className={style.subtitle} onClick={() => setShowNotes(!showNotes)} style={{ cursor: 'pointer' }}>
@@ -90,10 +144,12 @@ const Basket = ({ items = [], setItems }) => {
                         <div className={style.priceItem}>
                             <div className={style.priceTotal}>
                                 <h6 className={style.priceDish}>Subtotal</h6>
-                                <p className={style.subotal}>{subtotal.toFixed(2)}$</p>
+                                <p className={style.subtotal}>{subtotal.toFixed(2)}$</p>
                             </div>
-
-                            <h6 className={style.priceDish}>Tax</h6>
+                            <div className={style.priceTotal}>
+                                <h6 className={style.priceDish}>With discount</h6>
+                                <p className={style.subtotal}>{totalAfterDiscount.toFixed(2)}$</p>
+                            </div>
                         </div>
 
                         <button className={style.checkout}>Continue to Checkout</button>

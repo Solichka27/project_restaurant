@@ -1,9 +1,20 @@
 .basket {
-    padding: 20px;
+    padding: 15px;
     border-radius: 8px;
     box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
-    width: 240px;
+    width: 250px;
     font-family: 'Segoe UI', sans-serif;
+    overflow-y: auto;
+    margin-bottom: 1rem;
+}
+
+.basket::-webkit-scrollbar {
+    width: 6px;
+}
+
+.basket::-webkit-scrollbar-thumb {
+    background-color: #ccc;
+    border-radius: 4px;
 }
 
 .emptyBasket {
@@ -118,10 +129,6 @@
     transition: background-color 0.3s;
 }
 
-.promoCode button:hover {
-    background-color: #9c7e5c;
-}
-
 .orderNotes textarea {
     min-height: 60px;
     resize: vertical;
@@ -135,7 +142,6 @@
     border-bottom: 1px solid #eee;
     margin-bottom: 16px;
 }
-
 
 .changeDish {
     display: flex;
@@ -191,7 +197,7 @@
     color: #333;
 }
 
-.subotal {
+.subtotal {
     font-size: 16px;
     font-weight: bold;
     color: #111;

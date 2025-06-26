@@ -1,4 +1,4 @@
-export const PromoCodeConst = [
+const PromoCodeConst = [
     {
         promo: "dish10",
         discount: 10
@@ -12,3 +12,4 @@ export const PromoCodeConst = [
         discount: 5
     }
 ];
+export default PromoCodeConst;
