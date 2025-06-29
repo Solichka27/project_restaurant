@@ -6,19 +6,20 @@ import PromoCodeConst from './PromoCodeConst';
 import EmptyBasket from "../../../assets/image/menus/emptyBasket.png"
 
 const Basket = ({ items = [], setItems }) => {
-    const [showPromo, setShowPromo] = useState(false);
+    const [showPromoCode, setShowPromoCode] = useState(false);
     const [showNotes, setShowNotes] = useState(false);
-    const [editingItem, setEditingItem] = useState(null);
+    const [editingDish, setEditingDish] = useState(null);
     const [promoInput, setPromoInput] = useState('');
-    const [validPromo, setValidPromo] = useState(null);
-    const [discountAmount, setDiscountAmount] = useState(0);
+    const [isValidPromoCode, setIsValidPromoCode] = useState();
+    const [promoCodeTouched, setPromoCodeTouched] = useState(false);
+
 
     const handleEdit = (item) => {
-        setEditingItem(item);
+        setEditingDish(item);
     };
 
     const handleCloseModal = () => {
-        setEditingItem(null);
+        setEditingDish(null);
     };
 
     const handleSaveChanges = (updatedItem) => {
@@ -35,23 +36,20 @@ const Basket = ({ items = [], setItems }) => {
         setItems(updatedItems);
     };
 
-    const handleApplyPromo = () => {
+    const handleApplyPromo = (input) => {
         const foundPromo = PromoCodeConst.find(
-            code => code.promo.toLowerCase() === promoInput.trim().toLowerCase()
+            code => code.promo.toLowerCase() === input.trim().toLowerCase()
         );
 
         if (foundPromo) {
-            setValidPromo(foundPromo);
-            const discount = (subtotal * foundPromo.discount) / 100;
-            setDiscountAmount(discount);
+            setIsValidPromoCode(foundPromo);
         } else {
-            setValidPromo(null);
-            setDiscountAmount(0);
+            setIsValidPromoCode(null);
         }
     };
 
-
     const subtotal = items.reduce((acc, item) => acc + item.price * item.quantity, 0);
+    const discountAmount = isValidPromoCode ? (subtotal * isValidPromoCode.discount) / 100 : 0;
     const totalAfterDiscount = subtotal - discountAmount;
 
     return (
@@ -84,46 +82,44 @@ const Basket = ({ items = [], setItems }) => {
 
                     <div className={style.buyItem}>
                         <div className={style.promoCode}>
-                            <h3 className={style.subtitle} onClick={() => setShowPromo(!showPromo)} style={{ cursor: 'pointer' }}>
+                            <h3 className={style.subtitle} onClick={() => setShowPromoCode(!showPromoCode)} style={{ cursor: 'pointer' }}>
                                 Promo Code
                             </h3>
-                            {showPromo && (
+                            {showPromoCode && (
                                 <>
                                     <input
                                         type="text"
                                         placeholder="Enter Promo Code"
                                         value={promoInput}
                                         onChange={(e) => {
-                                            const value = e.target.value;
-                                            setPromoInput(value);
-
-                                            const foundPromo = PromoCodeConst.find(
-                                                code => code.promo.toLowerCase() === value.trim().toLowerCase()
-                                            );
-
-                                            if (foundPromo) {
-                                                setValidPromo(foundPromo);
-                                                const discount = (subtotal * foundPromo.discount) / 100;
-                                                setDiscountAmount(discount);
-                                            } else {
-                                                setValidPromo(null);
-                                                setDiscountAmount(0);
-                                            }
+                                            setPromoInput(e.target.value)
+                                            setPromoCodeTouched(false);
                                         }}
-
                                     />
 
                                     <button
-                                        onClick={handleApplyPromo}
+                                        onClick={() => {
+                                            handleApplyPromo(promoInput);
+                                            setPromoCodeTouched(true);
+                                        }
+
+                                        }
+
                                         style={{
-                                            backgroundColor: validPromo ? '#9c7e5c' : '#ccc',
-                                            cursor: validPromo ? 'pointer' : 'not-allowed',
+                                            backgroundColor: promoInput.trim() ? '#9c7e5c' : '#ccc',
+                                            cursor: promoInput.trim() ? 'pointer' : 'not-allowed',
                                             transition: '0.3s',
                                         }}
-                                        disabled={!validPromo}
+                                        disabled={!promoInput.trim()}
                                     >
                                         Apply
                                     </button>
+
+                                    {promoCodeTouched && (
+                                        <p style={{ color: isValidPromoCode ? 'green' : 'red', marginTop: '8px' }}>
+                                            {isValidPromoCode ? 'Promo code applied!' : 'Invalid promo code'}
+                                        </p>
+                                    )}
                                 </>
                             )}
                         </div>
@@ -157,9 +153,9 @@ const Basket = ({ items = [], setItems }) => {
                 </div>
             )}
 
-            {editingItem && (
+            {editingDish && (
                 <ModalView
-                    item={editingItem}
+                    item={editingDish}
                     onClose={handleCloseModal}
                     onAddToBasket={handleSaveChanges}
                 />

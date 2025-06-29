@@ -1,4 +1,4 @@
-import { useState, useRef } from 'react';
+import { useState, useRef, useEffect } from 'react';
 import style from './FilterMenus.module.css';
 import SearchMenus from '../searchMenus/SearchMenus';
 import { FaShoppingCart } from 'react-icons/fa';
@@ -9,7 +9,15 @@ import Basket from "../basket/Basket";
 const FilterMenus = () => {
     const [isCartOpen, setIsCartOpen] = useState(false);
     const [selectedCategories, setSelectedCategories] = useState([]);
-    const [basketItems, setBasketItems] = useState([]);
+    const [basketItems, setBasketItems] = useState(() => {
+        const saved = localStorage.getItem('basketItems');
+        return saved ? JSON.parse(saved) : [];
+    });
+    
+    useEffect(() => {
+        localStorage.setItem('basketItems', JSON.stringify(basketItems));
+    }, [basketItems]);
+
     const sectionRefs = {
         starters: useRef(null),
         sandwiches: useRef(null),
