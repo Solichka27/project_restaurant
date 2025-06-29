@@ -11,7 +11,6 @@ const Basket = ({ items = [], setItems }) => {
     const [editingDish, setEditingDish] = useState(null);
     const [promoInput, setPromoInput] = useState('');
     const [isValidPromoCode, setIsValidPromoCode] = useState();
-    const [promoCodeTouched, setPromoCodeTouched] = useState(false);
 
 
     const handleEdit = (item) => {
@@ -93,18 +92,12 @@ const Basket = ({ items = [], setItems }) => {
                                         value={promoInput}
                                         onChange={(e) => {
                                             setPromoInput(e.target.value)
-                                            setPromoCodeTouched(false);
+                                            setIsValidPromoCode(undefined);
                                         }}
                                     />
 
                                     <button
-                                        onClick={() => {
-                                            handleApplyPromo(promoInput);
-                                            setPromoCodeTouched(true);
-                                        }
-
-                                        }
-
+                                        onClick={() => handleApplyPromo(promoInput)}
                                         style={{
                                             backgroundColor: promoInput.trim() ? '#9c7e5c' : '#ccc',
                                             cursor: promoInput.trim() ? 'pointer' : 'not-allowed',
@@ -115,7 +108,7 @@ const Basket = ({ items = [], setItems }) => {
                                         Apply
                                     </button>
 
-                                    {promoCodeTouched && (
+                                    {isValidPromoCode !== undefined && (
                                         <p style={{ color: isValidPromoCode ? 'green' : 'red', marginTop: '8px' }}>
                                             {isValidPromoCode ? 'Promo code applied!' : 'Invalid promo code'}
                                         </p>
