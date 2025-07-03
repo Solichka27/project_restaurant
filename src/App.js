@@ -4,6 +4,7 @@ import { BrowserRouter, Routes, Route } from 'react-router-dom';
 import Layout from './navigation/Layout';
 import HomePage from './pages/homePage/homePage/HomePage';
 import Menus from './pages/menusPage/Menus';
+import GiftCards from './pages/giftPage/GiftCards';
 
 function App() {
   return (
@@ -12,6 +13,7 @@ function App() {
         <Route path="/" element={<Layout />}>
           <Route path="/project_restaurant" element={<HomePage />} />
           <Route path="/menus" element={<Menus />} />
+          <Route path="/gift-cards" element={<GiftCards />} />
         </Route>
       </Routes>
     </BrowserRouter>
