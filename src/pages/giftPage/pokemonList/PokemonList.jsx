@@ -1,10 +1,12 @@
 import { useEffect, useState } from 'react';
 import axios from 'axios';
-import style from "./ConnectWithAPI.module.css"
+import style from "./PokemonList.module.css";
+
 
 const PokemonList = () => {
   const [pokemons, setPokemons] = useState([]);
   const [loading, setLoading] = useState(true);
+  const [error, setError] = useState(null);
 
   useEffect(() => {
     const getPokemons = async () => {
@@ -13,7 +15,7 @@ const PokemonList = () => {
         setPokemons(res.data.results);
         setLoading(false);
       } catch (err) {
-        console.error('Помилка при завантаженні покемонів', err);
+        setError('Failed to load Pokemon');
         setLoading(false);
       }
     };
@@ -21,7 +23,8 @@ const PokemonList = () => {
     getPokemons();
   }, []);
 
-  if (loading) return <p>Завантаження...</p>;
+  if (loading) return <p>Loading...</p>;
+  if (error) return <p style={{ color: "red" }}>{error}</p>;
 
   return (
     <div>
@@ -43,8 +46,9 @@ const PokemonList = () => {
             </div>
           );
         })}
+
       </div>
-      
+
     </div>
   );
 };

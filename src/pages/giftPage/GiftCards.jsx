@@ -1,11 +1,11 @@
 import style from './GiftCards.module.css';
-import ConnectWithAPI from './connectAPI/ConnectWithAPI';
+import PokemonList from './pokemonList/PokemonList';
 
 
 const GiftCards = () => {
     return (
         <div className={style.mainContainer}>
-            <ConnectWithAPI />
+            <PokemonList />
         </div>
     )
 }
