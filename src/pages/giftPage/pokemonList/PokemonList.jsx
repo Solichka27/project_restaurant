@@ -3,24 +3,25 @@ import axios from 'axios';
 import style from "./PokemonList.module.css";
 
 
+const fetchPokemons = async (setPokemons, setError, setLoading) => {
+  try {
+    const res = await axios.get('https://pokeapi.co/api/v2/pokemon?limit=27');
+    setPokemons(res.data.results);
+  } catch (err) {
+    setError('Failed to load Pokemon');
+  } finally {
+    setLoading(false);
+  }
+};
+
+
 const PokemonList = () => {
   const [pokemons, setPokemons] = useState([]);
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState(null);
 
   useEffect(() => {
-    const getPokemons = async () => {
-      try {
-        const res = await axios.get('https://pokeapi.co/api/v2/pokemon?limit=27');
-        setPokemons(res.data.results);
-        setLoading(false);
-      } catch (err) {
-        setError('Failed to load Pokemon');
-        setLoading(false);
-      }
-    };
-
-    getPokemons();
+    fetchPokemons(setPokemons, setError, setLoading);
   }, []);
 
   if (loading) return <p>Loading...</p>;
