@@ -1,0 +1,42 @@
+.title{
+    margin: 40px;
+    text-align: center;
+}
+.mainContent {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+    justify-content: center;
+    margin-bottom: 40px;
+}
+.blockPokemon {
+    border: 1px solid #ddd;
+    border-radius: 12px;
+    padding: 15px;
+    width: calc((100% / 5) - 20px);
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    background-color: #f8f9fa;
+    text-align: center;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    cursor: pointer;
+}
+
+.blockPokemon:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
+}
+
+.blockPokemon img {
+    width: 96px;
+    height: 96px;
+    object-fit: contain;
+    margin-bottom: 10px;
+}
+
+.blockPokemon h3 {
+    font-size: 1.1rem;
+    color: #333;
+    text-transform: capitalize;
+    margin: 0;
+    user-select: none;
+}
