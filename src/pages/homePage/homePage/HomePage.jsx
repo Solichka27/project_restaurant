@@ -3,7 +3,6 @@ import style from './HomePage.module.css';
 import MainPhoto from '../mainPhoto/MainPhoto';
 import FourCardMenu from '../fourCardMenu/FourCardMenu';
 import MainContent from '../mainContent/MainContent';
-import Footer from '../footer/Footer';
 
 function HomePage() {
     return (
@@ -11,7 +10,6 @@ function HomePage() {
             <MainPhoto />
             <FourCardMenu />
             <MainContent />
-            <Footer />
         </div>
     );
 }

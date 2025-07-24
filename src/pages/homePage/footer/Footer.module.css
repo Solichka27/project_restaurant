@@ -24,9 +24,10 @@
     color: gray;
 }
 
-.navHome {
+.navActive {
     color: gray;
-    font-weight: 400;
+    font-weight: 300;
+    border-bottom: 1px solid gray;
 }
 
 .social {

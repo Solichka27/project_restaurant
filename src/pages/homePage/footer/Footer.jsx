@@ -17,13 +17,34 @@ const Footer = (props) => {
 
             <div className={style.navbar}>
                 <div className={style.address}>140 WEST 4TH ST</div>
-                <NavLink to="/project_restaurant" className={`${style.navLink} ${style.navHome}`}>HOME</NavLink>
-                <NavLink to="/order" className={style.navLink}>ORDER</NavLink>
-                <NavLink to="/menus" className={style.navLink}>MENUS</NavLink>
-                <NavLink to="/gift-cards" className={style.navLink}>GIFT CARDS</NavLink>
-                <NavLink to="/about" className={style.navLink}>ABOUT</NavLink>
-                <NavLink to="/contact" className={style.navLink}>CONTACT</NavLink>
-                <NavLink to="/press" className={style.navLink}>PRESS</NavLink>
+                <NavLink to="/project_restaurant"
+                    className={({ isActive }) =>
+                        isActive ? `${style.navLink} ${style.navActive}` : style.navLink
+                    }>HOME</NavLink>
+
+                <NavLink to="/order" className={({ isActive }) =>
+                    isActive ? `${style.navLink} ${style.navActive}` : style.navLink
+                }>ORDER</NavLink>
+
+                <NavLink to="/menus" className={({ isActive }) =>
+                    isActive ? `${style.navLink} ${style.navActive}` : style.navLink
+                }>MENUS</NavLink>
+
+                <NavLink to="/gift-cards" className={({ isActive }) =>
+                    isActive ? `${style.navLink} ${style.navActive}` : style.navLink
+                }>GIFT CARDS</NavLink>
+
+                <NavLink to="/about" className={({ isActive }) =>
+                    isActive ? `${style.navLink} ${style.navActive}` : style.navLink
+                }>ABOUT</NavLink>
+
+                <NavLink to="/contact" className={({ isActive }) =>
+                    isActive ? `${style.navLink} ${style.navActive}` : style.navLink
+                }>CONTACT</NavLink>
+
+                <NavLink to="/press" className={({ isActive }) =>
+                    isActive ? `${style.navLink} ${style.navActive}` : style.navLink
+                }>PRESS</NavLink>
             </div>
 
             <div className={style.social}>
