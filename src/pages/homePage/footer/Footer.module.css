@@ -1,0 +1,46 @@
+.container {
+    background-color: #191919;
+    color: white;
+    justify-content: center;
+    text-align: center;
+    padding: 30px;
+}
+
+.navbar {
+    margin-top: 80px;
+    display: flex;
+    gap: 50px;
+    text-align: center;
+    justify-content: center;
+}
+
+.navLink {
+    text-decoration: none;
+    color: white;
+    font-weight: 500;
+}
+
+.navbar :hover {
+    color: gray;
+}
+
+.navHome {
+    color: gray;
+    font-weight: 400;
+}
+
+.social {
+    margin-top: 80px;
+    text-decoration: none;
+    display: flex;
+    gap: 12px;
+    text-align: center;
+    justify-content: center;
+}
+
+.socialLogo {
+    height: 10px;
+    padding: 6px;
+    background-color: white;
+    border-radius: 10px;
+}
