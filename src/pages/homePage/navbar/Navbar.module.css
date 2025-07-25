@@ -25,6 +25,12 @@
     font-weight: 500;
 }
 
+.linkActive {
+    color: black;
+    font-weight: 700;
+    border-bottom: 1px solid gray;
+}
+
 .links :hover {
     color: black;
 }
