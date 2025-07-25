@@ -2,7 +2,7 @@ import style from './Contact.module.css';
 
 const Contact = () => {
     return (
-        <div>
+        <div className={style.container}>
             <h1> Contact Us</h1>
         </div>
     )

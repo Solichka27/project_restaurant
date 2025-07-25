@@ -2,7 +2,7 @@ import style from './Orders.module.css';
 
 const Orders = () => {
     return (
-        <div>
+        <div className={style.container}>
             <h1> Orders </h1>
         </div>
     )
