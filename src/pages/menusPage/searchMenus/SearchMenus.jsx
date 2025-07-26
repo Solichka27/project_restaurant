@@ -1,4 +1,4 @@
-import { useState, useEffect } from 'react';
+import { useState, useEffect, useRef } from 'react';
 import style from './SearchMenus.module.css';
 import Modal from 'react-modal';
 
@@ -30,10 +30,11 @@ const filterItems = (searchTerm, selectedCategories) => {
     });
 };
 
-const SearchMenus = ({  selectedCategories, sectionRefs, onAddToBasket} ) => {
+const SearchMenus = ({ selectedCategories, sectionRefs, onAddToBasket }) => {
     const [searchTerm, setSearchTerm] = useState('');
     const [filteredItems, setFilteredItems] = useState(allItems);
     const [selectedItem, setSelectedItem] = useState(null);
+    const sectionRefsMap = useRef({});
 
     useEffect(() => {
         const safeSearch = searchTerm || '';
@@ -46,6 +47,25 @@ const SearchMenus = ({  selectedCategories, sectionRefs, onAddToBasket} ) => {
             setFilteredItems(results);
         }
     }, [searchTerm, selectedCategories]);
+
+    useEffect(() => {
+        const observer = new IntersectionObserver(
+            (entries) => {
+                entries.forEach((entry) => {
+                    if (entry.isIntersecting) {
+                        entry.target.classList.add(style.visible);
+                    }
+                });
+            },
+            { threshold: 0.2 }
+        );
+
+        Object.values(sectionRefsMap.current).forEach((ref) => {
+            if (ref) observer.observe(ref);
+        });
+
+        return () => observer.disconnect();
+    }, [filteredItems]);
 
     const groupedItems = filteredItems.reduce((acc, item) => {
         acc[item.category] = acc[item.category] ? [...acc[item.category], item] : [item];
@@ -69,7 +89,9 @@ const SearchMenus = ({  selectedCategories, sectionRefs, onAddToBasket} ) => {
                 <p className={style.notFound}>Нічого не знайдено</p>
             ) : (
                 Object.entries(groupedItems).map(([category, items]) => (
-                    <div key={category} id={items[0].id}>
+                    <div key={category} id={items[0].id}
+                        ref={(el) => (sectionRefsMap.current[category] = el)}
+                        className={`${style.fadeInSection}`}>
                         <ViewItemMenus title={category} items={items} onItemClick={(item) => setSelectedItem(item)} />
                     </div>
                 ))
@@ -86,7 +108,7 @@ const SearchMenus = ({  selectedCategories, sectionRefs, onAddToBasket} ) => {
                     <ModalView
                         item={selectedItem}
                         onClose={() => setSelectedItem(null)}
-                        onAddToBasket={onAddToBasket} 
+                        onAddToBasket={onAddToBasket}
                     />
                 )}
             </Modal>
