@@ -22,9 +22,9 @@ const Footer = (props) => {
                         isActive ? `${style.navLink} ${style.navActive}` : style.navLink
                     }>HOME</NavLink>
 
-                <NavLink to="/order" className={({ isActive }) =>
+                <NavLink to="/orders" className={({ isActive }) =>
                     isActive ? `${style.navLink} ${style.navActive}` : style.navLink
-                }>ORDER</NavLink>
+                }>ORDERS</NavLink>
 
                 <NavLink to="/menus" className={({ isActive }) =>
                     isActive ? `${style.navLink} ${style.navActive}` : style.navLink
