@@ -2,6 +2,7 @@ import style from './Basket.module.css';
 import { useState } from 'react';
 import ModalView from '../itemMenus/modalView/ModalView';
 import PromoCodeConst from './PromoCodeConst';
+import { NavLink } from 'react-router-dom';
 
 import EmptyBasket from "../../../assets/image/menus/emptyBasket.png"
 
@@ -140,8 +141,9 @@ const Basket = ({ items = [], setItems }) => {
                                 <p className={style.subtotal}>{totalAfterDiscount.toFixed(2)}$</p>
                             </div>
                         </div>
-
-                        <button className={style.checkout}>Continue to Checkout</button>
+                        <NavLink to="/orders">
+                            <button className={style.checkout}>Continue to Checkout</button>
+                        </NavLink>
                     </div>
                 </div>
             )}
