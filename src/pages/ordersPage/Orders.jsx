@@ -1,6 +1,9 @@
 import style from './Orders.module.css';
+import {useStore} from "../../store/store";
 
 const Orders = () => {
+
+    const {} = useStore();
     return (
         <div className={style.container}>
             <h1 className={style.title}> Orders </h1>
