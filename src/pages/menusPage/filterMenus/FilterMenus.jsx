@@ -1,22 +1,18 @@
-import { useState, useRef, useEffect } from 'react';
+import { useState, useRef } from 'react';
 import style from './FilterMenus.module.css';
 import SearchMenus from '../searchMenus/SearchMenus';
 import { FaShoppingCart } from 'react-icons/fa';
-
+import { useDishStore } from '../../../store/useDishStore';
 
 import Basket from "../basket/Basket";
 
 const FilterMenus = () => {
     const [isCartOpen, setIsCartOpen] = useState(false);
     const [selectedCategories, setSelectedCategories] = useState([]);
-    const [basketItems, setBasketItems] = useState(() => {
-        const saved = localStorage.getItem('basketItems');
-        return saved ? JSON.parse(saved) : [];
-    });
-    
-    useEffect(() => {
-        localStorage.setItem('basketItems', JSON.stringify(basketItems));
-    }, [basketItems]);
+    const { dishes } = useDishStore();
+
+
+    const totalQuantity = dishes.reduce((total, dish) => total + dish.quantity, 0);
 
     const sectionRefs = {
         starters: useRef(null),
@@ -34,20 +30,7 @@ const FilterMenus = () => {
         }
     };
 
-    const handleAddToBasket = (newItem) => {
-        setBasketItems(prevItems => {
-            const existingItem = prevItems.find(item => item.name === newItem.name);
-            if (existingItem) {
-                return prevItems.map(item =>
-                    item.name === newItem.name
-                        ? { ...item, quantity: item.quantity + newItem.quantity }
-                        : item
-                );
-            } else {
-                return [...prevItems, newItem];
-            }
-        });
-    };
+
 
     return (
         <div className={style.mainContent}>
@@ -75,16 +58,20 @@ const FilterMenus = () => {
                 <SearchMenus
                     selectedCategories={selectedCategories}
                     sectionRefs={sectionRefs}
-                    onAddToBasket={handleAddToBasket}
                 />
-                <button className={style.cartButton} onClick={() => setIsCartOpen(true)}>
-                    <FaShoppingCart size={24} />
-                </button>
+                <div className={style.cartButtonWrapper}>
+                    <button className={style.cartButton} onClick={() => setIsCartOpen(true)}>
+                        <FaShoppingCart size={24} />
+                    </button>
+                    {totalQuantity > 0 && (
+                        <span className={style.badge}>{totalQuantity}</span>
+                    )}
+                </div>
             </div>
             {isCartOpen && (
                 <div className={style.cartModal}>
                     <button className={style.closeButton} onClick={() => setIsCartOpen(false)}>×</button>
-                    <Basket items={basketItems}  setItems={setBasketItems} />
+                    <Basket />
                 </div>
             )}
         </div>

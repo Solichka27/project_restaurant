@@ -1,13 +1,22 @@
 import style from './ModalView.module.css';
 import { useState, useEffect } from 'react';
+import { useDishStore } from '../../../../store/useDishStore';
 
-const ModalView = ({ item, onClose, onAddToBasket }) => {
+const ModalView = ({ item, isEditing = false }) => {
+    const { closeModal, onAddToBasket, updateDishInBasket, editingDish } = useDishStore();
     const [counter, setCounter] = useState(() => item.quantity || 1);
     const [priceDish, setPrice] = useState(() => item.price * (item.quantity || 1));
 
     useEffect(() => {
         setPrice(item.price * counter);
     }, [counter, item.price]);
+
+    // Оновлення лічильника при зміні редагуємої страви
+    useEffect(() => {
+        if (editingDish) {
+            setCounter(editingDish.quantity);
+        }
+    }, [editingDish]);
 
     const increment = (e) => {
         setCounter(prev => prev + 1);
@@ -18,6 +27,7 @@ const ModalView = ({ item, onClose, onAddToBasket }) => {
             setCounter(prev => prev - 1);
         }
     }
+
     const handleAddToBasket = () => {
         const orderItem = {
             name: item.name,
@@ -25,15 +35,20 @@ const ModalView = ({ item, onClose, onAddToBasket }) => {
             price: item.price,
             img: item.img,
         };
-        onAddToBasket(orderItem);
-        onClose();
+
+        if (isEditing) {
+            updateDishInBasket(orderItem);
+        } else {
+            onAddToBasket(orderItem);
+        }
+        closeModal();
     };
 
 
     return (item &&
-        <div className={style.wrapper} onClick={onClose}>
+        <div className={style.wrapper} onClick={closeModal}>
             <div className={style.modalContent} onClick={(e) => e.stopPropagation()}>
-                <button onClick={onClose} className={style.closeButton}>×</button>
+                <button onClick={closeModal} className={style.closeButton}>×</button>
                 <img src={item.img} alt={item.name} className={style.modalImage} />
                 <div className={style.blockText}>
                     <h3 className={style.name}>{item.name}</h3>
@@ -47,7 +62,9 @@ const ModalView = ({ item, onClose, onAddToBasket }) => {
                     </div>
 
                     <div className={style.addOrder}>
-                        <button className={style.order} onClick={handleAddToBasket}>Add to my order {priceDish}$</button>
+                        <button className={style.order} onClick={handleAddToBasket}>
+                            {isEditing ? 'Update order' : 'Add to my order'} {priceDish}$
+                        </button>
                     </div>
                 </div>
 
