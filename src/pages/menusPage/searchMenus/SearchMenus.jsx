@@ -86,17 +86,21 @@ const SearchMenus = ({ selectedCategories, sectionRefs }) => {
                     onChange={(e) => setSearchTerm(e.target.value)}
                 />
             </div>
-            {searchTerm.length >= 3 && filteredItems.length === 0 ? (
-                <p className={style.notFound}>Нічого не знайдено</p>
-            ) : (
-                Object.entries(groupedItems).map(([category, items]) => (
-                    <div key={category} id={items[0].id}
-                        ref={(el) => (sectionRefsMap.current[category] = el)}
-                        className={`${style.fadeInSection}`}>
-                        <ViewItemMenus title={category} items={items} />
+            <div className={style.containerMenus}>
+                {searchTerm.length >= 3 && filteredItems.length === 0 ? (
+                    <div className={style.contentContainer}>
+                        <p className={style.notFound}>Нічого не знайдено</p>
                     </div>
-                ))
-            )}
+                ) : (
+                    Object.entries(groupedItems).map(([category, items]) => (
+                        <div key={category} id={items[0].id}
+                            ref={(el) => (sectionRefsMap.current[category] = el)}
+                            className={`${style.fadeInSection}`}>
+                            <ViewItemMenus title={category} items={items} />
+                        </div>
+                    ))
+                )}
+            </div>
 
             <Modal
                 isOpen={isModalOpen}

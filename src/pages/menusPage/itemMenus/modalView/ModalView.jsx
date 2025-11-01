@@ -8,10 +8,26 @@ const ModalView = ({ item, isEditing = false }) => {
     const [priceDish, setPrice] = useState(() => item.price * (item.quantity || 1));
 
     useEffect(() => {
+        const scrollY = window.scrollY;
+        document.body.style.position = 'fixed';
+        document.body.style.top = `-${scrollY}px`;
+        document.body.style.width = '100%';
+        document.body.style.overflowY = 'scroll';
+
+        return () => {
+            document.body.style.position = '';
+            document.body.style.top = '';
+            document.body.style.overflowY = '';
+            document.body.style.width = '';
+            window.scrollTo(0, scrollY);
+        };
+    }, []);
+    
+    useEffect(() => {
         setPrice(item.price * counter);
     }, [counter, item.price]);
 
-    // Оновлення лічильника при зміні редагуємої страви
+
     useEffect(() => {
         if (editingDish) {
             setCounter(editingDish.quantity);
