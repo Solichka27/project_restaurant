@@ -6,6 +6,7 @@ import { Starters, Sandwiches, Mains, Desserts } from '../itemMenus/ItemMenusCon
 import ViewItemMenus from "../itemMenus/viewItemMenus/ViewItemMenus";
 import IconSearch from "../../../assets/image/menus/iconSearch.svg";
 import ModalView from '../itemMenus/modalView/ModalView';
+import { useDishStore } from '../../../store/useDishStore';
 
 const allItems = [
     ...Starters.map(item => ({ ...item, category: 'Starters', id: "starters" })),
@@ -30,11 +31,11 @@ const filterItems = (searchTerm, selectedCategories) => {
     });
 };
 
-const SearchMenus = ({ selectedCategories, sectionRefs, onAddToBasket }) => {
+const SearchMenus = ({ selectedCategories, sectionRefs }) => {
     const [searchTerm, setSearchTerm] = useState('');
     const [filteredItems, setFilteredItems] = useState(allItems);
-    const [selectedItem, setSelectedItem] = useState(null);
     const sectionRefsMap = useRef({});
+    const { closeModal, selectedDish, isModalOpen } = useDishStore();
 
     useEffect(() => {
         const safeSearch = searchTerm || '';
@@ -85,30 +86,32 @@ const SearchMenus = ({ selectedCategories, sectionRefs, onAddToBasket }) => {
                     onChange={(e) => setSearchTerm(e.target.value)}
                 />
             </div>
-            {searchTerm.length >= 3 && filteredItems.length === 0 ? (
-                <p className={style.notFound}>Нічого не знайдено</p>
-            ) : (
-                Object.entries(groupedItems).map(([category, items]) => (
-                    <div key={category} id={items[0].id}
-                        ref={(el) => (sectionRefsMap.current[category] = el)}
-                        className={`${style.fadeInSection}`}>
-                        <ViewItemMenus title={category} items={items} onItemClick={(item) => setSelectedItem(item)} />
+            <div className={style.containerMenus}>
+                {searchTerm.length >= 3 && filteredItems.length === 0 ? (
+                    <div className={style.contentContainer}>
+                        <p className={style.notFound}>Нічого не знайдено</p>
                     </div>
-                ))
-            )}
+                ) : (
+                    Object.entries(groupedItems).map(([category, items]) => (
+                        <div key={category} id={items[0].id}
+                            ref={(el) => (sectionRefsMap.current[category] = el)}
+                            className={`${style.fadeInSection}`}>
+                            <ViewItemMenus title={category} items={items} />
+                        </div>
+                    ))
+                )}
+            </div>
 
             <Modal
-                isOpen={!!selectedItem}
-                onRequestClose={() => setSelectedItem(null)}
+                isOpen={isModalOpen}
+                onRequestClose={closeModal}
                 className={style.modalContent}
                 overlayClassName={style.modalOverlay}
                 contentLabel="ReviewItemPost"
             >
-                {selectedItem && (
+                {selectedDish && (
                     <ModalView
-                        item={selectedItem}
-                        onClose={() => setSelectedItem(null)}
-                        onAddToBasket={onAddToBasket}
+                        item={selectedDish}
                     />
                 )}
             </Modal>

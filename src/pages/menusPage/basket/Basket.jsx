@@ -3,37 +3,24 @@ import { useState } from 'react';
 import ModalView from '../itemMenus/modalView/ModalView';
 import PromoCodeConst from './PromoCodeConst';
 import { NavLink } from 'react-router-dom';
+import { useDishStore } from '../../../store/useDishStore';
 
 import EmptyBasket from "../../../assets/image/menus/emptyBasket.png"
 
-const Basket = ({ items = [], setItems }) => {
+const Basket = () => {
+    const { dishes, removeFromBasket, openModal, isModalOpen, editingDish, setEditingDish } = useDishStore();
     const [showPromoCode, setShowPromoCode] = useState(false);
     const [showNotes, setShowNotes] = useState(false);
-    const [editingDish, setEditingDish] = useState(null);
     const [promoInput, setPromoInput] = useState('');
     const [isValidPromoCode, setIsValidPromoCode] = useState();
 
-
-    const handleEdit = (item) => {
-        setEditingDish(item);
+    const handleEdit = (dishes) => {
+        setEditingDish(dishes);
+        openModal(dishes);
     };
 
-    const handleCloseModal = () => {
-        setEditingDish(null);
-    };
-
-    const handleSaveChanges = (updatedItem) => {
-        setItems(prevItems =>
-            prevItems.map(item =>
-                item.name === updatedItem.name ? updatedItem : item
-            )
-        );
-        handleCloseModal();
-    };
-
-    const handleRemove = (indexToRemove) => {
-        const updatedItems = items.filter((_, index) => index !== indexToRemove);
-        setItems(updatedItems);
+    const handleRemove = (id) => {
+        removeFromBasket(id);
     };
 
     const handleApplyPromo = (input) => {
@@ -48,14 +35,14 @@ const Basket = ({ items = [], setItems }) => {
         }
     };
 
-    const subtotal = items.reduce((acc, item) => acc + item.price * item.quantity, 0);
+    const subtotal = dishes.reduce((acc, item) => acc + item.price * item.quantity, 0);
     const discountAmount = isValidPromoCode ? (subtotal * isValidPromoCode.discount) / 100 : 0;
     const totalAfterDiscount = subtotal - discountAmount;
 
     return (
         <div className={style.basket}>
             <h2 className={style.title}>My Order</h2>
-            {items.length === 0 ? (
+            {dishes.length === 0 ? (
                 <div className={style.emptyBasket}>
                     <img src={EmptyBasket} alt="Empty Basket" className={style.iconEmptyBasket} />
                     <p className={style.empty}> Your basket is empty</p>
@@ -63,8 +50,8 @@ const Basket = ({ items = [], setItems }) => {
 
             ) : (
                 <div>
-                    {items.map((item, index) => (
-                        <div key={index} className={style.item}>
+                    {dishes.map((item, index) => (
+                        <div key={item.id || index} className={style.item}>
                             <div className={style.dishItem}>
                                 <img src={item.img} alt={item.name} className={style.itemImage} />
                                 <div className={style.itemInfo}>
@@ -74,7 +61,7 @@ const Basket = ({ items = [], setItems }) => {
                             </div>
                             <div className={style.changeDish}>
                                 <button className={style.edit} onClick={() => handleEdit(item)}>Edit</button>
-                                <button className={style.remove} onClick={() => handleRemove(index)}>Remove</button>
+                                <button className={style.remove} onClick={() => handleRemove(item.id)}>Remove</button>
                             </div>
 
                         </div>
@@ -148,11 +135,10 @@ const Basket = ({ items = [], setItems }) => {
                 </div>
             )}
 
-            {editingDish && (
+            {editingDish && isModalOpen && (
                 <ModalView
                     item={editingDish}
-                    onClose={handleCloseModal}
-                    onAddToBasket={handleSaveChanges}
+                    isEditing={true}
                 />
             )}
         </div>

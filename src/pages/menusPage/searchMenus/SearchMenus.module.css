@@ -7,8 +7,12 @@
     margin-bottom: 40px;
 }
 
+.containerMenus {
+    margin-bottom: 100px;
+}
+
 .inputBox {
-    width: 70%;
+    width: 100%;
     padding: 10px 10px 10px 40px;
     border: 1px solid #ccc;
     border-radius: 8px;
@@ -29,6 +33,9 @@
     padding: 1rem;
     color: #888;
     font-style: italic;
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
 
 .modalContent {
