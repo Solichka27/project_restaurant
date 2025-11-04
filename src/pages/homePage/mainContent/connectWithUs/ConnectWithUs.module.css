@@ -8,6 +8,12 @@
     opacity: 0.5;
     width: 100%;
     display: block;
+    background-image: url(../../../../assets/image/homePage/mainContent/connectWithUs/connectWithUs.png);
+    background-attachment: fixed;
+    background-size: cover;
+    background-position: center;
+    min-height: 100vh;
+    box-sizing: border-box;
 }
 
 .block {
