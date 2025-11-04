@@ -1,13 +1,17 @@
 .mainContainer {
     position: relative;
-    width: fit-content;
-    margin: 0 auto;
 }
 
 .mainPhoto {
-    width: 100%;
     height: auto;
     display: block;
+    background-image: url(./../../../assets/image/homePage/header/mainPhoto.png);
+    background-attachment: fixed;
+    background-size: cover;
+    background-position: center;
+    min-height: 100vh;
+    padding: 20px;
+    box-sizing: border-box;
 }
 
 .logo {
