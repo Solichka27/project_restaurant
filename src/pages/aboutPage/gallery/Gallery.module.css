@@ -1,0 +1,10 @@
+.titleGallery {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    position: relative;
+    border-bottom: 2px solid black;
+    padding-bottom: 10px;
+    margin-bottom: 40px;
+
+}

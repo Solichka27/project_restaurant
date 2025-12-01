@@ -26,7 +26,7 @@ const TestimonialVideo = () => {
                 <div className={style.quoteBlock}>
                     <p className={style.quote}>"I love their Chicken Parmesan. It tastes just like chicken but itʼs all soy!" </p>
                     <p className={style.author}> - Janet Jackson</p>
-                    <LinkButton text="MORE PRESS" link="#press" className={style.btn} />
+                    <LinkButton text="MORE PRESS" link="/press" isBlank={false} className={style.btn} />
                 </div>
             </div>
 

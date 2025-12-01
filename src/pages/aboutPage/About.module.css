@@ -1,3 +1,37 @@
 .container {
-    display: flex;
+    text-align: center;
+    justify-content: center;
+    background-image: url(./../../assets/image/homePage/header/mainPhoto.png);
+    background-attachment: fixed;
+    background-size: cover;
+    background-position: center;
+    min-height: 100vh;
+    box-sizing: border-box;
+}
+
+.backgroundColor {
+    background-color: #54474776;
+    position: relative;
+    min-height: inherit;
+}
+
+.logo {
+    position: absolute;
+    top: 40%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 380px;
+    height: auto;
+    z-index: 2;
+}
+
+.foodcontainer {
+    text-align: center;
+    justify-content: center;
+    background-image: url(./../../assets/image/homePage/mainContent/foodPhoto.jpeg);
+    background-attachment: fixed;
+    background-size: cover;
+    background-position: center;
+    min-height: 100vh;
+    box-sizing: border-box;
 }

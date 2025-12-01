@@ -17,7 +17,7 @@ const Order = () => {
                     <p className={style.takeOutText}>To place an order for pickup,</p>
                     <p className={style.takeOutText}>please order via Square.</p>
                 </div>
-                <LinkButton text="ORDER PICKUP" link="#menu" isBlank={false} />
+                <LinkButton text="ORDER PICKUP" link="/menus" isBlank={false} />
             </div>
 
             <div className={style.sectionDelivery}>
@@ -33,9 +33,9 @@ const Order = () => {
                         target='_blank' rel="noopener noreferrer" className={style.linkItem}>
                         Postmates</a>
                     <a href="https://www.grubhub.com/restaurant/red-bamboo-140-west-4th-street-new-york/2185145" target='_blank' rel="noopener noreferrer" className={style.linkItem}>PGrubHub</a>
-                    <a href="https://www.seamless.com/menu/red-bamboo-140-west-4th-street-new-york/2185145" target='_blank'  rel="noopener noreferrer" className={style.linkItem}>Postmates</a>
+                    <a href="https://www.seamless.com/menu/red-bamboo-140-west-4th-street-new-york/2185145" target='_blank' rel="noopener noreferrer" className={style.linkItem}>Postmates</a>
                     &
-                    <a href="https://www.ubereats.com/store/red-bamboo/AENNGqX0QuyQWIYlZ-oxIg" target='_blank'  rel="noopener noreferrer" className={style.linkItem}>UberEats</a>
+                    <a href="https://www.ubereats.com/store/red-bamboo/AENNGqX0QuyQWIYlZ-oxIg" target='_blank' rel="noopener noreferrer" className={style.linkItem}>UberEats</a>
                 </div>
 
             </div>

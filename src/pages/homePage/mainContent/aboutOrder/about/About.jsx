@@ -7,7 +7,7 @@ import LinkButton from '../../../../../components/button/LinkButton';
 const About = () => {
     return (
         <div className={style.mainContent}>
-            
+
             <div className='about'>
                 <h1 className={style.title}>ABOUT</h1>
                 <h3 className={style.subtitle}>our restaurant</h3>
@@ -49,7 +49,7 @@ const About = () => {
                     <p className={style.phoneNum}>212.260.1212</p>
                     <p className={style.phoneNum}>212.260.7049</p>
                 </div>
-                <LinkButton text="ABOUT US" link="#about" isBlank={false} />
+                <LinkButton text="ABOUT US" link="/about" isBlank={false} />
             </div>
         </div>
 
