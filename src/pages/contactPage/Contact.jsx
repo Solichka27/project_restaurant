@@ -38,7 +38,7 @@ const Contact = () => {
 
                 <div className={style.iconContainer}>
                     <img src={email} alt="iconEmail" className={style.iconImage} />
-                    <a href="mailto:REDBAMBOONYC@GMAIL.COM" className={style.titleToIcon}>
+                    <a href="mailto:redbamboo@email.com" target="_blank" rel="noopener noreferrer" className={style.titleToIcon}>
                         Message Here
                     </a>
 
