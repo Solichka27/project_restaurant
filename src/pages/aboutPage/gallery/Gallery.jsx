@@ -1,4 +1,5 @@
 import style from './Gallery.module.css'
+import GalleryItems from "./galleryItems/GalleryItems"
 
 const Gallery = () => {
 
@@ -8,6 +9,7 @@ const Gallery = () => {
                 <h2 className={style.titleFood}>VEGAN COMFORT FOOD</h2>
                 <h2 className={style.titleAddress}>140 WEST 4TH STREET</h2>
             </div>
+            <GalleryItems />
         </div>
 
     )
