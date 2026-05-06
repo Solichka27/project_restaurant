@@ -1,0 +1,37 @@
+.mainContainer {
+    display: grid;
+    gap: 20px;
+    text-align: center;
+    justify-content: center;
+    grid-template-columns: 250px 250px 250px;
+    margin-bottom: 40px;
+}
+
+.aboutItem {
+    position: relative;
+    width: 250px;
+    cursor: pointer;
+}
+
+.imageGallery {
+    width: 100%;
+    display: block;
+}
+
+.title {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+
+    background: rgba(0, 0, 0, 0.7);
+    color: white;
+    padding: 10px;
+
+    opacity: 0;
+    transition: opacity 0.3s ease;
+}
+
+.aboutItem:hover .title {
+    opacity: 1;
+}

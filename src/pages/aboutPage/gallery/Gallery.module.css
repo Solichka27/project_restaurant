@@ -1,10 +1,17 @@
-.titleGallery {
-    display: flex;
-    justify-content: space-between;
+.wrapper {
+    margin-top: 30px;
+    justify-content: center;
     align-items: center;
+    text-align: center;
+}
+
+.titleGallery {
     position: relative;
     border-bottom: 2px solid black;
-    padding-bottom: 10px;
     margin-bottom: 40px;
+    display: inline-flex;
+    justify-content: center;
+    align-items: center;
+    gap: 250px;
 
 }
