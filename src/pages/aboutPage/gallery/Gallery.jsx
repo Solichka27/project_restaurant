@@ -1,5 +1,6 @@
-import style from './Gallery.module.css'
-import GalleryItems from "./galleryItems/GalleryItems"
+import style from './Gallery.module.css';
+import GalleryItems from "./galleryItems/GalleryItems";
+import LinkButton from "./../../../components/button/LinkButton"
 
 const Gallery = () => {
 
@@ -10,6 +11,7 @@ const Gallery = () => {
                 <h2 className={style.titleAddress}>140 WEST 4TH STREET</h2>
             </div>
             <GalleryItems />
+            <LinkButton link="/gallery" text="VIEW MORE" isBlank={false} />
         </div>
 
     )

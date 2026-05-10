@@ -1,0 +1,18 @@
+.mainContainer {
+    margin: 40px;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 5px;
+}
+
+.aboutItem {
+    height: 250px;
+    flex-grow: 1;
+}
+
+.imageGallery {
+    height: 100%;
+    width: 100%;
+    display: block;
+    object-fit: cover;
+}

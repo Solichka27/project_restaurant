@@ -3,7 +3,7 @@
     gap: 20px;
     text-align: center;
     justify-content: center;
-    grid-template-columns: 250px 250px 250px;
+    grid-template-columns: repeat(3, 250px);
     margin-bottom: 40px;
 }
 
@@ -15,7 +15,8 @@
 
 .imageGallery {
     width: 100%;
-    display: block;
+    object-fit: cover;
+    height: 250px;
 }
 
 .title {

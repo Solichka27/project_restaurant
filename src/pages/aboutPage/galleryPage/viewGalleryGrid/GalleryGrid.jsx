@@ -1,18 +1,20 @@
 import { useState } from 'react';
-import GalleryItemsConst from "../GalleryItemsConst";
-import style from "./GalleryItems.module.css";
 import ReviewItemPost from "../../../homePage/mainContent/instagramPosts/itemPost/reviewItemPost/ReviewItemPost"
-import PopupModal from '../../../../components/popupModal/PopupModal'
+import GalleryItemsConst from "../../gallery/GalleryItemsConst";
+import style from "./GalleryGrid.module.css";
+import PopupModal from '../../../../components/popupModal/PopupModal';
 
-const GalleryItems = () => {
+const GalleryGrid = () => {
     const [selectedItem, setSelectedItem] = useState(null);
     return (
         <div className={style.mainContainer}>
-            {GalleryItemsConst.slice(0, 6).map((item, index) => (
-                <div key={index} className={style.aboutItem} onClick={() => setSelectedItem({ item, index })}>
+            {GalleryItemsConst.map((item, index) => (
+                <div key={index} className={style.aboutItem} onClick={() => setSelectedItem({ item, index })} style={{
+                    gridColumn: `span ${item.span}`,
+                }} >
                     <img src={item.img} alt={item.title} className={style.imageGallery} />
                     <div className={style.title}>
-                        {item.title}
+                        {/* {item.title} */}
                     </div>
 
                 </div>
@@ -24,9 +26,8 @@ const GalleryItems = () => {
                 setSelectedItem={setSelectedItem}
                 RenderComponent={ReviewItemPost}
             />
-
         </div>
+
     )
 }
-
-export default GalleryItems;
+export default GalleryGrid;

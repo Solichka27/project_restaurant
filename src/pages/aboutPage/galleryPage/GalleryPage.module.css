@@ -1,0 +1,46 @@
+.arrow {
+    width: 56px;
+    height: 56px;
+    background-color: rgba(222, 222, 222, 0.642);
+    color: black;
+    font-size: 35px;
+    border-radius: 50%;
+    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.15);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    z-index: 2;
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    font-family: Arial, sans-serif;
+    text-decoration: none;
+}
+
+.left {
+    left: 10px;
+}
+
+.right {
+    right: 10px;
+}
+
+.titleUnderArrow {
+    position: absolute;
+    top: 80px;
+    white-space: nowrap;
+    font-size: 12px;
+    left: 50%;
+    transform: translateX(-50%);
+}
+
+/* для правої стрілки
+.right .titleUnderArrow {
+    right: 20px;
+}
+
+/* для лівої стрілки
+.left .titleUnderArrow {
+    left: 20px;
+} */

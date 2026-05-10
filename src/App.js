@@ -11,6 +11,7 @@ import GiftCards from './pages/giftPage/GiftCards';
 import About from './pages/aboutPage/About';
 import Contact from './pages/contactPage/Contact';
 import Press from './pages/pressPage/Press';
+import GalleryPage from './pages/aboutPage/galleryPage/GalleryPage';
 
 function App() {
   return (
@@ -26,6 +27,7 @@ function App() {
           <Route path="/about" element={<About />} />
           <Route path='/contact' element={<Contact />} />
           <Route path="/press" element={<Press />} />
+          <Route path="/gallery" element={<GalleryPage />} />
         </Route>
       </Routes>
 
