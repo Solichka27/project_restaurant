@@ -1,9 +1,9 @@
 import { useState } from 'react';
 import Slider from "react-slick";
-import Modal from 'react-modal';
 import style from './ItemPost.module.css';
 import ItemPostConst from './ItemPostConst';
 import ReviewItemPost from './reviewItemPost/ReviewItemPost';
+import PopupModal from '../../../../../components/popupModal/PopupModal';
 
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
@@ -55,35 +55,13 @@ const ItemPost = () => {
             </Slider>
 
 
-            <Modal
-                isOpen={!!selectedItem}
-                onRequestClose={() => setSelectedItem(null)}
-                className={style.modalContent}
-                overlayClassName={style.modalOverlay}
-                contentLabel="ReviewItemPost"
-            >
-                {selectedItem && (
-                    <ReviewItemPost
-                        item={selectedItem.item}
-                        onClose={() => setSelectedItem(null)}
-                        onPrev={() => {
-                            const prevIndex = selectedItem.index - 1;
-                            if (prevIndex >= 0) {
-                                setSelectedItem({ item: ItemPostConst[prevIndex], index: prevIndex });
-                            }
-                        }}
-                        onNext={() => {
-                            const nextIndex = selectedItem.index + 1;
-                            if (nextIndex < ItemPostConst.length) {
-                                setSelectedItem({ item: ItemPostConst[nextIndex], index: nextIndex });
-                            }
-                        }}
-                    />
-                )}
-            </Modal>
+            <PopupModal
+                listConst={ItemPostConst}
+                selectedItem={selectedItem}
+                setSelectedItem={setSelectedItem}
+                RenderComponent={ReviewItemPost}
+            />
         </div>
-
-
 
     );
 };
