@@ -11,8 +11,6 @@ const GalleryPage = () => {
                 <div className={style.titleUnderArrow}>
                     Back to about
                 </div>
-
-
             </Link>
 
             <GalleryGrid />
@@ -22,8 +20,6 @@ const GalleryPage = () => {
                 <div className={style.titleUnderArrow}>
                     Go on to press
                 </div>
-
-
             </Link>
         </div>
     )
