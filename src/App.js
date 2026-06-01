@@ -15,22 +15,22 @@ import GalleryPage from './pages/aboutPage/galleryPage/GalleryPage';
 
 function App() {
   return (
-    <BrowserRouter>
+    <BrowserRouter basename="/project_restaurant">
       <ScrollToTop />
 
       <Routes>
         <Route path="/" element={<Layout />}>
-          <Route path="/project_restaurant" element={<HomePage />} />
-          <Route path="/orders" element={<Orders />} />
-          <Route path="/menus" element={<Menus />} />
-          <Route path="/gift-cards" element={<GiftCards />} />
-          <Route path="/about" element={<About />} />
-          <Route path='/contact' element={<Contact />} />
-          <Route path="/press" element={<Press />} />
-          <Route path="/gallery" element={<GalleryPage />} />
+          <Route index element={<HomePage />} />
+          <Route path="orders" element={<Orders />} />
+          <Route path="menus" element={<Menus />} />
+          <Route path="gift-cards" element={<GiftCards />} />
+          <Route path="about" element={<About />} />
+          <Route path="contact" element={<Contact />} />
+          <Route path="press" element={<Press />} />
+          <Route path="gallery" element={<GalleryPage />} />
         </Route>
       </Routes>
-
+      
     </BrowserRouter>
   );
 }
