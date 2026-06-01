@@ -12,7 +12,7 @@ const Navbar = (props) => {
 
                 <div className={style.address}>140 WEST 4TH ST</div>
                 <div className={style.links}>
-                    <NavLink to="/project_restaurant" className={({ isActive }) =>
+                    <NavLink to="/" className={({ isActive }) =>
                         isActive ? `${style.link} ${style.linkActive}` : style.link
                     }>HOME</NavLink>
                     <NavLink to="/orders" className={({ isActive }) =>
